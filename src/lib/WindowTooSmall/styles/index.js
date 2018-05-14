@@ -1,12 +1,9 @@
 import styled from 'styled-components';
 
 const Section = styled.div`
-
+  
   display: ${({ active }) => active ? 'flex' : 'none'};
-  flex-direction: ${({ orientation }) =>
-    orientation === 'landscape'
-      ? 'row'
-      : 'column'};
+  flex-direction: column;
   justify-content: space-around;
   align-items: center;
 
@@ -34,11 +31,21 @@ const Icon = styled.img`
 `;
 
 const Title = styled.h1`
-
-  font-size: 22px;
-  text-align: left;
-  max-width: 40%;
+  
+  font-size: 34px;
+  text-align: center;
 
 `;
 
-export { Section, Icon, Title };
+const Description = styled.p`
+
+  font-size: 22px;
+  text-align: center;
+
+  span {
+    display: block;
+  }
+
+`;
+
+export { Section, Icon, Title, Description };

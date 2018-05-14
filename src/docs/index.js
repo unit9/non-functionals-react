@@ -7,6 +7,8 @@ import rotateMobile from './images/rotate-mobile.png';
 import rotateTablet from './images/rotate-tablet.png';
 import rotateBg from './images/rotate-bg.jpg';
 
+import windowTooSmallIcon from './images/screen-too-small.png';
+
 const App = () => (
   <div>
     {/* <NotFound /> */}
@@ -22,9 +24,19 @@ const App = () => (
       backgroundColor="#000"
       zIndex={10000}
     />
-    {/* <Unsupported />
-    <WebGLNotEnabled />
-    <WindowTooSmall /> */}
+    {/* <Unsupported /> */}
+    {/* <WebGLNotEnabled /> */}
+    <WindowTooSmall
+      minWidth={1080}
+      minHeight={650}
+      icon={windowTooSmallIcon}
+      title="Window Too Small"
+      description="Please increase the size of your <br /> screen to view this website"
+      fontColor="#FFF"
+      backgroundImage={rotateBg}
+      backgroundColor="#000"
+      zIndex={10000}
+    />
   </div>
 );
 

@@ -1,8 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import UAParser from 'ua-parser-js';
+import debounce from 'lodash.debounce';
 
-import { Section, Img, Title } from './styles';
+import { Section, Icon, Title } from './styles';
 
 const device = new UAParser().getResult().device.type;
 
@@ -44,7 +45,7 @@ class RotateDevice extends React.PureComponent {
       this.setState({ title: tabletTitle, icon: tabletIcon });
     }
 
-    window.addEventListener('resize', this.onResize);
+    window.addEventListener('resize', debounce(this.onResize, 50));
     this.onResize();
   }
 
@@ -68,7 +69,7 @@ class RotateDevice extends React.PureComponent {
   }
 
   render() {
-    const { background, fontColor, backgroundColor, backgroundImage, zIndex } = this.props;
+    const { fontColor, backgroundColor, backgroundImage, zIndex } = this.props;
     const { active, title, icon, orientation } = this.state;
 
     return (
@@ -77,13 +78,11 @@ class RotateDevice extends React.PureComponent {
         orientation={orientation}
         backgroundColor={backgroundColor}
         backgroundImage={backgroundImage}
+        fontColor={fontColor}
         zIndex={zIndex}
       >
-        {icon && <Img src={icon} />}
-        <Title
-          fontColor={fontColor}
-          dangerouslySetInnerHTML={{ __html: title }}
-        />
+        {icon && <Icon src={icon} />}
+        <Title dangerouslySetInnerHTML={{ __html: title }} />
       </Section>
     );
   }
