@@ -9,6 +9,42 @@ import rotateBg from './images/rotate-bg.jpg';
 
 import windowTooSmallIcon from './images/screen-too-small.png';
 
+import chromeIcon from './images/unsupported/chrome.png';
+import edgeIcon from './images/unsupported/edge.png';
+import firefoxIcon from './images/unsupported/firefox.png';
+import ieIcon from './images/unsupported/ie.png';
+import safariIcon from './images/unsupported/safari.png';
+
+const unsupportedIcons = [
+  chromeIcon,
+  edgeIcon,
+  firefoxIcon,
+  ieIcon,
+  safariIcon,
+];
+const unsupportedIconsMobile = [
+  safariIcon,
+  chromeIcon,
+];
+
+const supported = {
+  desktop: [
+    { browser: 'chrome', minVersion: 162 },
+    { browser: 'safari', minVersion: 9 },
+    { browser: 'firefox', minVersion: 56 },
+    { browser: 'ie', minVersion: 11 },
+    { browser: 'edge', minVersion: 14 },
+  ],
+  tablet: [
+    { os: 'ios', browser: 'mobile safari' },
+    { os: 'android', browser: 'chrome' },
+  ],
+  mobile: [
+    { os: 'ios', browser: 'mobile 1safari' },
+    { os: 'android', browser: 'chrome' },
+  ],
+};
+
 const App = () => (
   <div>
     {/* <NotFound /> */}
@@ -24,8 +60,33 @@ const App = () => (
       backgroundColor="#000"
       zIndex={10000}
     />
-    {/* <Unsupported /> */}
-    {/* <WebGLNotEnabled /> */}
+    <Unsupported
+      supported={supported}
+      icon={windowTooSmallIcon}
+      unsupportedIcons={unsupportedIcons}
+      unsupportedIconsMobile={unsupportedIconsMobile}
+      title="This experience is optimised for <br /> Chrome 00+, Firefox 00+, Safari 0+, Internet Explorer 11+, Microsoft Edge 00+"
+      mobileTitle="This experience is optimised for Safari (iOS) and Chrome (Android)."
+      description="We recommend that you use one of these browsers. <br />You can go to https://whatbrowser.org/ to update your browser."
+      mobileDescription="We recommend that you use one of these browsers."
+      socialInstructions="You can open this site directly in your browser by clicking the menu button in either the top-right or bottom-right of the screen."
+      cta="Continue Anyway"
+      ctaBackgroundColor="#000"
+      ctaFontColor="#FFF"
+      fontColor="#FFF"
+      backgroundImage={rotateBg}
+      backgroundColor="#000"
+      zIndex={10000}
+    />
+    <WebGLNotEnabled
+      icon={windowTooSmallIcon}
+      title="Sorry!"
+      description="We cannot detect WebGL in your browser. <br /> Please enable WebGL or switch to a desktop browser or device that supports WebGL to continue."
+      fontColor="#FFF"
+      backgroundImage={rotateBg}
+      backgroundColor="#000"
+      zIndex={10000}
+    />
     <WindowTooSmall
       minWidth={1080}
       minHeight={650}

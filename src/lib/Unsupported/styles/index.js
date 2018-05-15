@@ -31,11 +31,22 @@ const Icon = styled.img`
 
 `;
 
-const Title = styled.h1`
+const Title = styled.p`
   
-  font-size: 34px;
+  font-size: 22px;
   text-align: center;
-  margin: 0 0 10px 0;
+  margin: 0 0 30px 0;
+
+`;
+
+const UnsupportedIcons = styled.div`
+
+  margin-bottom: 30px;
+
+  img {
+    display: inline-block;
+    margin: 0 30px;
+  }
 
 `;
 
@@ -43,8 +54,23 @@ const Description = styled.p`
 
   font-size: 22px;
   text-align: center;
-  margin: 0;
+  margin: 0 0 30px 0;
+  max-width: 600px;
 
 `;
 
-export { Section, Icon, Title, Description };
+const Cta = styled.button`
+
+  font-size: 22px;
+  margin: 0;
+  max-width: 600px;
+  background-color: ${({ backgroundColor }) => backgroundColor};
+  color: ${({ fontColor }) => fontColor};
+  border-radius: 5px;
+  border: none;
+  padding: 15px 40px;
+  cursor: pointer;
+
+`;
+
+export { Section, Icon, Title, Description, Cta, UnsupportedIcons };

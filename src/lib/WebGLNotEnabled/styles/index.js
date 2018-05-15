@@ -1,12 +1,9 @@
 import styled from 'styled-components';
 
 const Section = styled.div`
-
+  
   display: ${({ active }) => active ? 'flex' : 'none'};
-  flex-direction: ${({ orientation }) =>
-    orientation === 'landscape'
-      ? 'row'
-      : 'column'};
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 
@@ -22,10 +19,6 @@ const Section = styled.div`
   background-size: cover;
 
   color: ${({ fontColor }) => fontColor};
-  text-align: ${({ orientation }) =>
-    orientation === 'landscape'
-      ? 'left'
-      : 'center'};
 
   z-index: ${({ zIndex }) => zIndex};
 
@@ -34,19 +27,25 @@ const Section = styled.div`
 const Icon = styled.img`
 
   display: block;
-  margin: ${({ orientation }) =>
-    orientation === 'landscape'
-      ? '0 30px 0 0'
-      : '0 0 30px 0'};
+  margin-bottom: 30px;
 
 `;
 
 const Title = styled.h1`
-
-  font-size: 22px;
-  max-width: 40%;
-  margin: 0;
+  
+  font-size: 34px;
+  text-align: center;
+  margin: 0 0 10px 0;
 
 `;
 
-export { Section, Icon, Title };
+const Description = styled.p`
+
+  font-size: 22px;
+  text-align: center;
+  margin: 0;
+  max-width: 600px;
+
+`;
+
+export { Section, Icon, Title, Description };
