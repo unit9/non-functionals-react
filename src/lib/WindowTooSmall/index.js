@@ -67,6 +67,7 @@ class WindowTooSmall extends React.Component {
 
     return (
       <Section
+        className="WindowTooSmall"
         active={active}
         backgroundColor={backgroundColor}
         backgroundImage={backgroundImage}

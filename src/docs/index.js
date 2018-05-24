@@ -1,7 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import { NotFound, RotateDevice, WindowTooSmall, WebGLNotEnabled, Unsupported } from '../lib';
+import {
+  NotFound,
+  RotateDevice,
+  WindowTooSmall,
+  WebGLNotEnabled,
+  Unsupported
+} from '../lib';
 
 import rotateMobile from './images/rotate-mobile.png';
 import rotateTablet from './images/rotate-tablet.png';
@@ -14,6 +20,7 @@ import edgeIcon from './images/unsupported/edge.png';
 import firefoxIcon from './images/unsupported/firefox.png';
 import ieIcon from './images/unsupported/ie.png';
 import safariIcon from './images/unsupported/safari.png';
+import warningIcon from './images/unsupported/warning.png';
 
 const unsupportedIcons = [
   chromeIcon,
@@ -62,7 +69,7 @@ const App = () => (
     />
     <Unsupported
       supported={supported}
-      icon={windowTooSmallIcon}
+      icon={warningIcon}
       unsupportedIcons={unsupportedIcons}
       unsupportedIconsMobile={unsupportedIconsMobile}
       title="This experience is optimised for <br /> Chrome 00+, Firefox 00+, Safari 0+, Internet Explorer 11+, Microsoft Edge 00+"

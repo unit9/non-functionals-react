@@ -74,6 +74,7 @@ class RotateDevice extends React.PureComponent {
 
     return (
       <Section
+        className="RotateDevice"
         active={active}
         orientation={orientation}
         backgroundColor={backgroundColor}

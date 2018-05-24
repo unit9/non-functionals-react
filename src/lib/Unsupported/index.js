@@ -76,7 +76,7 @@ class Unsupported extends React.Component {
         description: mobileDescription
       });
     } else {
-      this.setState({ title, unsupportedIcons, description });
+      this.setState({ title, icons: unsupportedIcons, description });
     }
 
     if (!this.browserDetection.isSupported()) {
@@ -107,8 +107,9 @@ class Unsupported extends React.Component {
         backgroundImage={backgroundImage}
         fontColor={fontColor}
         zIndex={zIndex}
+        type={this.browserDetection.type}
       >
-        {icon && <Icon src={icon} />}
+        {icon && <Icon src={icon} type={this.browserDetection.type} />}
         <Title dangerouslySetInnerHTML={{ __html: title }} />
         <UnsupportedIcons>
           {icons.map((icon) => <img src={icon} key={icon} />)}

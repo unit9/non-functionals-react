@@ -7,6 +7,9 @@ const Section = styled.div`
   justify-content: center;
   align-items: center;
 
+  padding: 0 20px;
+  box-sizing: border-box;
+
   position: fixed;
   top: 0;
   left: 0;
@@ -19,6 +22,7 @@ const Section = styled.div`
   background-size: cover;
 
   color: ${({ fontColor }) => fontColor};
+  font-size: ${({ type }) => type === 'mobile' ? '16px' : '22px'};
 
   z-index: ${({ zIndex }) => zIndex};
 
@@ -29,11 +33,12 @@ const Icon = styled.img`
   display: block;
   margin-bottom: 30px;
 
+  width: ${({ type }) => type === 'mobile' ? '65px' : 'auto'};
+
 `;
 
 const Title = styled.p`
   
-  font-size: 22px;
   text-align: center;
   margin: 0 0 30px 0;
 
@@ -52,7 +57,6 @@ const UnsupportedIcons = styled.div`
 
 const Description = styled.p`
 
-  font-size: 22px;
   text-align: center;
   margin: 0 0 30px 0;
   max-width: 600px;
@@ -61,7 +65,6 @@ const Description = styled.p`
 
 const Cta = styled.button`
 
-  font-size: 22px;
   margin: 0;
   max-width: 600px;
   background-color: ${({ backgroundColor }) => backgroundColor};

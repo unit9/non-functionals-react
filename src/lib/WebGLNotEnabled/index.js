@@ -44,6 +44,7 @@ class WebGLNotEnabled extends React.Component {
 
     return (
       <Section
+      className="WebGLNotEnabled"
         active={active}
         backgroundColor={backgroundColor}
         backgroundImage={backgroundImage}
