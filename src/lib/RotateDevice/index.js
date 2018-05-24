@@ -82,8 +82,16 @@ class RotateDevice extends React.PureComponent {
         fontColor={fontColor}
         zIndex={zIndex}
       >
-        {icon && <Icon src={icon} orientation={orientation} />}
-        <Title dangerouslySetInnerHTML={{ __html: title }} />
+        {icon &&
+          <Icon
+            className="RotateDevice-Icon"
+            src={icon}
+            orientation={orientation}
+          />}
+        <Title
+          className="RotateDevice-Title"
+          dangerouslySetInnerHTML={{ __html: title }}
+        />
       </Section>
     );
   }

@@ -2,11 +2,12 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 import {
+  BuildVersion,
   NotFound,
   RotateDevice,
   WindowTooSmall,
   WebGLNotEnabled,
-  Unsupported
+  Unsupported,
 } from '../lib';
 
 import rotateMobile from './images/rotate-mobile.png';
@@ -36,7 +37,7 @@ const unsupportedIconsMobile = [
 
 const supported = {
   desktop: [
-    { browser: 'chrome', minVersion: 162 },
+    { browser: 'chrome', minVersion: 2 },
     { browser: 'safari', minVersion: 9 },
     { browser: 'firefox', minVersion: 56 },
     { browser: 'ie', minVersion: 11 },
@@ -52,20 +53,24 @@ const supported = {
   ],
 };
 
+const version = `v 0.0.1 built on ${new Date().toGMTString()}`;
+
 const App = () => (
   <div>
-    {/* <NotFound /> */}
-    <RotateDevice
-      mobileOrientation="portrait"
-      mobileIcon={rotateMobile}
-      mobileTitle="Please rotate your device vertically"
-      tabletOrientation="landscape"
-      tabletIcon={rotateTablet}
-      tabletTitle="Please rotate your device horizontally"
+    <BuildVersion version={version} live={false} />
+    <NotFound
+      icon={warningIcon}
+      title="OOPS!"
+      subtitle="Sorry, something has gone wrong."
+      description="We can't find what you're looking for."
+      cta="Back to Home"
+      ctaBackgroundColor="#000"
+      ctaFontColor="#FFF"
       fontColor="#FFF"
       backgroundImage={rotateBg}
       backgroundColor="#000"
       zIndex={10000}
+      onContinue={() => console.log('continue')}
     />
     <Unsupported
       supported={supported}

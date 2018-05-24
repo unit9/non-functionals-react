@@ -49,7 +49,7 @@ class BrowserDetection {
             return this.compareVersions(value, this.parser.getOS().version);
           case 'browser':
             return value === this.parser.getBrowser().name.toLowerCase();
-          case 'minversion':
+          case 'minVersion':
             return this.compareVersions(value, this.parser.getBrowser().version);
           case 'versions': // eslint-disable-line
             const v = isNaN(parseInt(this.parser.getBrowser().version, 10)) // eslint-disable-line

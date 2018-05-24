@@ -110,14 +110,24 @@ class Unsupported extends React.Component {
         type={this.browserDetection.type}
       >
         {icon && <Icon src={icon} type={this.browserDetection.type} />}
-        <Title dangerouslySetInnerHTML={{ __html: title }} />
-        <UnsupportedIcons>
+        <Title
+          className="Unsupported-Title"
+          dangerouslySetInnerHTML={{ __html: title }}
+        />
+        <UnsupportedIcons className="Unsupported-UnsupportedIcons">
           {icons.map((icon) => <img src={icon} key={icon} />)}
         </UnsupportedIcons>
-        <Description dangerouslySetInnerHTML={{ __html: description }} />
+        <Description
+          className="Unsupported-Description"
+          dangerouslySetInnerHTML={{ __html: description }}
+        />
         {this.browserDetection.isAppBrowser() &&
-          <Description dangerouslySetInnerHTML={{ __html: socialInstructions }} />}
+          <Description
+            className="Unsupported-SocialInstructions"
+            dangerouslySetInnerHTML={{ __html: socialInstructions }}
+          />}
         <Cta
+          className="Unsupported-Cta"
           backgroundColor={ctaBackgroundColor}
           fontColor={ctaFontColor}
           onClick={() => this.setState({ active: false })}

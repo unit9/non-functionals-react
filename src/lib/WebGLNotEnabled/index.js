@@ -44,16 +44,19 @@ class WebGLNotEnabled extends React.Component {
 
     return (
       <Section
-      className="WebGLNotEnabled"
+        className="WebGLNotEnabled"
         active={active}
         backgroundColor={backgroundColor}
         backgroundImage={backgroundImage}
         fontColor={fontColor}
         zIndex={zIndex}
       >
-        {icon && <Icon src={icon} />}
-        <Title>{title}</Title>
-        <Description dangerouslySetInnerHTML={{ __html: description }} />
+        {icon && <Icon className="WebGLNotEnabled-Icon" src={icon} />}
+        <Title className="WebGLNotEnabled-Title">{title}</Title>
+        <Description
+          className="WebGLNotEnabled-Description"
+          dangerouslySetInnerHTML={{ __html: description }}
+        />
       </Section>
     );
   }

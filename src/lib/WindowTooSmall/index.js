@@ -74,9 +74,12 @@ class WindowTooSmall extends React.Component {
         fontColor={fontColor}
         zIndex={zIndex}
       >
-        {icon && <Icon src={icon} />}
-        <Title>{title}</Title>
-        <Description dangerouslySetInnerHTML={{ __html: description }} />
+        {icon && <Icon className="WindowTooSmall-Icon" src={icon} />}
+        <Title className="WindowTooSmall-Title">{title}</Title>
+        <Description
+          className="WindowTooSmall-Description"
+          dangerouslySetInnerHTML={{ __html: description }}
+        />
       </Section>
     );
   }

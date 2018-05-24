@@ -1,3 +1,4 @@
+export { BuildVersion } from './BuildVersion';
 export { NotFound } from './NotFound';
 export { RotateDevice } from './RotateDevice';
 export { Unsupported } from './Unsupported';
