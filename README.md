@@ -213,10 +213,10 @@ Please adjust **_ONLY_** the following properties to fit your specific project:
 
 ##### Build Version
 
-| prop    | type   | required |
-| ------- | ------ | -------- |
-| version | number | yes      |
-| live    | number | yes      |
+| prop    | type   | required | description |
+| ------- | ------ | -------- | ----------- |
+| version | string | yes      | 
+| live    | bool   | yes      | if `true` then component will be hidden |
 
 ###### Note:
 
