@@ -225,6 +225,7 @@ The `version` prop should follow this format:
 ```javascript
 v {build number} built on {new Date().toGMTString()}
 ```
+---
 
 ## Running locally:
 Simply run `npm i` followed by `npm start`
