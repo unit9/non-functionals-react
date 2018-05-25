@@ -34,7 +34,7 @@ const Icon = styled.img`
 
 `;
 
-const Title = styled.p`
+const Title = styled.h1`
   
   font-size: 100px;
   text-align: center;
@@ -42,7 +42,7 @@ const Title = styled.p`
 
 `;
 
-const Subtitle = styled.p`
+const Subtitle = styled.h2`
 
   font-size: 32px;
   text-align: center;

@@ -1,6 +1,8 @@
 # Non Functionals React
 
-## Installation
+A set of simple React components for non functional pages that are easy to implement within any React project. Just pass in the props needed to suit your project and even access the css classes for more advanced customisation.
+
+## Installation:
 
 `npm i non-functionals-react --save`
 
@@ -32,9 +34,11 @@ and add them to your render method:
 />
 ```
 
-## Component Props:
+## Components:
 
-##### Not Found
+#### Not Found:
+
+##### Props:
 
 | prop               | type     | required |
 | ------------------ | ------   | -------- |
@@ -51,7 +55,21 @@ and add them to your render method:
 | zIndex             | number   | no       |
 | onContinue         | function | yes      |
 
-##### Rotate Device
+##### HTML structure:
+```html
+<div class="NotFound">
+  <img class="NotFound-Icon" />
+  <h1 class="NotFound-Title" />
+  <h2 class="NotFound-Subtitle" />
+  <p class="NotFound-Description" />
+  <button class="NotFound-Cta" />
+</div>
+```
+---
+
+#### Rotate Device:
+
+##### Props:
 
 | prop               | type     | required |
 | ------------------ | ------   | -------- |
@@ -61,12 +79,24 @@ and add them to your render method:
 | tabletOrientation  | string   | yes      |
 | tabletIcon         | string   | no       |
 | tabletTitle        | string   | yes      |
+| fontFamily         | string   | no       |
 | fontColor          | string   | no       |
 | backgroundColor    | string   | no       |
 | backgroundImage    | string   | no       |
 | zIndex             | number   | no       |
 
-##### Unsupported
+##### HTML structure:
+```html
+<div class="RotateDevice">
+  <img class="RotateDevice-Icon" />
+  <h1 class="RotateDevice-Title" />
+</div>
+```
+---
+
+#### Unsupported:
+
+##### Props:
 
 | prop                   | type     | required |
 | ---------------------- | ------   | -------- |
@@ -87,7 +117,7 @@ and add them to your render method:
 | backgroundImage        | string   | no       |
 | zIndex                 | number   | no       |
 
-###### Note:
+##### Note:
 
 The `supported` prop must follow this pattern:
 
@@ -111,12 +141,29 @@ The `supported` prop must follow this pattern:
 }
 ```
 
-Please adjust the following properties to fit your specific project:
+Please adjust **_ONLY_** the following properties to fit your specific project:
 * Desktop: `browser`, `minVersion`
 * Tablet: `os`, `browser`
 * Mobile: `os`, `browser`
 
-##### WebGL Not Enabled
+##### HTML structure:
+```html
+<div class="Unsupported">
+  <img class="Unsupported-Icon" />
+  <h1 class="Unsupported-Title" />
+  <div class="Unsupported-UnsupportedIcons">
+    <img />
+  </div>
+  <p class="Unsupported-Description" />
+  <p class="Unsupported-SocialInstructions" />
+  <button class="Unsupported-Cta" />
+</div>
+```
+---
+
+#### WebGL Not Enabled:
+
+##### Props:
 
 | prop               | type     | required |
 | ------------------ | ------   | -------- |
@@ -128,7 +175,19 @@ Please adjust the following properties to fit your specific project:
 | backgroundImage    | string   | no       |
 | zIndex             | number   | no       |
 
-##### Window Too Small
+##### HTML structure:
+```html
+<div class="WebGLNotEnabled">
+  <img class="WebGLNotEnabled-Icon" />
+  <h1 class="WebGLNotEnabled-Title" />
+  <p class="WebGLNotEnabled-Description" />
+</div>
+```
+---
+
+#### Window Too Small:
+
+##### Props:
 
 | prop               | type     | required |
 | ------------------ | ------   | -------- |
@@ -141,6 +200,16 @@ Please adjust the following properties to fit your specific project:
 | backgroundColor    | string   | no       |
 | backgroundImage    | string   | no       |
 | zIndex             | number   | no       |
+
+##### HTML structure:
+```html
+<div class="WindowTooSmall">
+  <img class="WindowTooSmall-Icon" />
+  <h1 class="WindowTooSmall-Title" />
+  <p class="WindowTooSmall-Description" />
+</div>
+```
+---
 
 ##### Build Version
 
