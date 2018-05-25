@@ -1,6 +1,6 @@
 {
   "name": "non-functionals-react",
-  "version": "0.0.7",
+  "version": "0.1.1",
   "description": "A set of components available via the NPM registry for easy integration into any UNIT9 project using React.",
   "main": "./dist/lib/index.js",
   "scripts": {
