@@ -19,6 +19,7 @@ const Button = styled.button`
 
   cursor: pointer;
   display: inline-block;
+  color: white;
 
 `;
 

@@ -72,6 +72,29 @@ const App = () => (
       zIndex={10000}
       onContinue={() => console.log('continue')}
     />
+    <WindowTooSmall
+      minWidth={1080}
+      minHeight={650}
+      icon={windowTooSmallIcon}
+      title="Window Too Small"
+      description="Please increase the size of your <br /> screen to view this website"
+      fontColor="#FFF"
+      backgroundImage={rotateBg}
+      backgroundColor="#000"
+      zIndex={10000}
+    />
+    <RotateDevice
+      mobileOrientation="portrait"
+      mobileIcon={rotateMobile}
+      mobileTitle="Please rotate your device vertically"
+      tabletOrientation="landscape"
+      tabletIcon={rotateTablet}
+      tabletTitle="Please rotate your device horizontally"
+      fontColor="#FFF"
+      backgroundImage={rotateBg}
+      backgroundColor="#000"
+      zIndex={10000}
+    />
     <Unsupported
       supported={supported}
       icon={warningIcon}
@@ -94,17 +117,6 @@ const App = () => (
       icon={windowTooSmallIcon}
       title="Sorry!"
       description="We cannot detect WebGL in your browser. <br /> Please enable WebGL or switch to a desktop browser or device that supports WebGL to continue."
-      fontColor="#FFF"
-      backgroundImage={rotateBg}
-      backgroundColor="#000"
-      zIndex={10000}
-    />
-    <WindowTooSmall
-      minWidth={1080}
-      minHeight={650}
-      icon={windowTooSmallIcon}
-      title="Window Too Small"
-      description="Please increase the size of your <br /> screen to view this website"
       fontColor="#FFF"
       backgroundImage={rotateBg}
       backgroundColor="#000"
