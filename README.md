@@ -211,14 +211,14 @@ Please adjust **_ONLY_** the following properties to fit your specific project:
 ```
 ---
 
-##### Build Version
+#### Build Version:
 
 | prop    | type   | required | description |
 | ------- | ------ | -------- | ----------- |
 | version | string | yes      | 
 | live    | bool   | yes      | if `true` then component will be hidden |
 
-###### Note:
+##### Note:
 
 The `version` prop should follow this format:
 
