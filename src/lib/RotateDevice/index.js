@@ -77,6 +77,7 @@ class RotateDevice extends React.PureComponent {
         className="RotateDevice"
         active={active}
         orientation={orientation}
+        iconExists={icon !== undefined}
         backgroundColor={backgroundColor}
         backgroundImage={backgroundImage}
         fontColor={fontColor}

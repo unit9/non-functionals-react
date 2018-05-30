@@ -22,8 +22,8 @@ const Section = styled.div`
   background-size: cover;
 
   color: ${({ fontColor }) => fontColor};
-  text-align: ${({ orientation }) =>
-    orientation === 'landscape'
+  text-align: ${({ orientation, iconExists }) =>
+    orientation === 'landscape' && iconExists
       ? 'left'
       : 'center'};
 

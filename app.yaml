@@ -1,0 +1,37 @@
+runtime: python27
+threadsafe: yes
+
+skip_files:
+- ^node_modules$
+- ^app\.yaml
+- ^README\..*
+- \.gitignore
+- \.editorconfig
+- ^\.git$
+- ^grunt\.js
+- ^gulp\.js
+- ^src$
+- ^app$
+- ^e2e$
+- ^karma\.conf\.js
+- ^package\.json
+- ^protractor\.conf\.js
+- ^tslint\.json
+- ^bower\.json
+
+handlers:
+- url: /(.*\.(gif|png|jpg|css|js|json|mp3|mp4|pdf|ttf|woff|woff2|xml)(|\.map))$
+  static_files: dist/\1
+  upload: dist/(.*\.(gif|png|jpg|css|js|json|mp3|mp4|pdf|ttf|woff|woff2|xml)(|\.map))$
+  expiration: "1m"
+
+- url: /
+  mime_type: text/html
+  static_files: dist/index.html
+  upload: dist/index.html
+
+libraries:
+- name: webapp2
+  version: latest
+- name: jinja2
+  version: latest
