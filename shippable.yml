@@ -19,11 +19,6 @@ build:
   on_success:
     - ~/google-cloud-sdk/bin/gcloud app deploy app.yaml --project non-functionals-react --version $(echo $BRANCH  | sed -E 's/[_/]+/-/g') --no-promote
 
-integrations:
-  generic:
-  - integrationName: github-app-password
-    type: git-credential
-
 branches:
   only:
     - develop
