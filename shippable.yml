@@ -13,7 +13,7 @@ build:
     - ~/google-cloud-sdk/bin/gcloud components install app-engine-python app-engine-python-extras
     - echo $SERVICE_ACCOUNT_KEY > /tmp/key.json
     - ~/google-cloud-sdk/bin/gcloud -q auth activate-service-account --key-file /tmp/key.json
-    - npm i --silent
+    - npm i
     - npm run build:docs
 
   on_success:
