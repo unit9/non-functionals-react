@@ -1,7 +1,6 @@
 import webapp2
 import jinja2
 import os
-from basic_auth import BasicAuthMiddleware
 
 try:
     from settings import config

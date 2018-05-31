@@ -13,6 +13,8 @@ build:
     - ~/google-cloud-sdk/bin/gcloud components install app-engine-python app-engine-python-extras
     - echo $SERVICE_ACCOUNT_KEY > /tmp/key.json
     - ~/google-cloud-sdk/bin/gcloud -q auth activate-service-account --key-file /tmp/key.json
+    - wget https://nodejs.org/dist/v9.9.0/node-v9.9.0-linux-x64.tar.gz -O ~/node-v9.9.0-linux-x64.tar.gz
+    - tar -C /usr --strip-components 1 -xzf ~/node-v9.9.0-linux-x64.tar.gz
     - npm install
     - npm run build:docs
 
