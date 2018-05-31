@@ -40,7 +40,15 @@ module.exports = {
     new HtmlWebPackPlugin({
       template: './src/docs/index.html',
       filename: './index.html'
-    })
+    }),
+    new webpack.DefinePlugin({
+      'process.env': {
+        ENV: JSON.stringify(process.env.NODE_ENV),
+        NODE_ENV: JSON.stringify(process.env.NODE_ENV),
+        BABEL_ENV: JSON.stringify(process.env.NODE_ENV),
+        VERSION: JSON.stringify(`v ${process.env.BUILD_NUMBER || 'local'} built on ${new Date().toGMTString()}`),
+      },
+    }),
   ],
   devServer: {
     contentBase: './dist',

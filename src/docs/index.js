@@ -53,11 +53,9 @@ const supported = {
   ],
 };
 
-const version = `v 0.0.1 built on ${new Date().toGMTString()}`;
-
 const App = () => (
   <div>
-    <BuildVersion version={version} live={false} />
+    <BuildVersion version={process.env.VERSION} live={false} />
     <NotFound
       icon={warningIcon}
       title="OOPS!"
