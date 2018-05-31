@@ -6,7 +6,9 @@
   "scripts": {
     "start": "./node_modules/.bin/webpack-dev-server --config ./webpack.dev.config.js --mode development",
     "build": "./node_modules/.bin/webpack  --config ./webpack.prod.config.js --mode=production",
-    "build:docs": "./node_modules/.bin/webpack --config ./webpack.dev.config.js --mode production"
+    "build:docs": "./node_modules/.bin/webpack --config ./webpack.dev.config.js --mode production",
+    "deploy": "npm run build:docs && gcloud app deploy app.yaml --project non-functionals-react --version master",
+    "deploy:dev": "npm run build:docs && gcloud app deploy app.yaml --project non-functionals-react --version develop --no-promote"
   },
   "repository": {
     "type": "git",

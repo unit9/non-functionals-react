@@ -37,7 +37,7 @@ const unsupportedIconsMobile = [
 
 const supported = {
   desktop: [
-    { browser: 'chrome', minVersion: 2 },
+    { browser: 'chrome', minVersion: 65 },
     { browser: 'safari', minVersion: 9 },
     { browser: 'firefox', minVersion: 56 },
     { browser: 'ie', minVersion: 11 },
@@ -48,7 +48,7 @@ const supported = {
     { os: 'android', browser: 'chrome' },
   ],
   mobile: [
-    { os: 'ios', browser: 'mobile 1safari' },
+    { os: 'ios', browser: 'mobile safari' },
     { os: 'android', browser: 'chrome' },
   ],
 };
