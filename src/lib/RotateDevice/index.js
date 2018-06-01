@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import UAParser from 'ua-parser-js';
 import debounce from 'lodash.debounce';
 
-import { Section, Icon, Title } from './styles';
+import { Section, Wrapper, Icon, Title } from './styles';
 
 const device = new UAParser().getResult().device.type;
 
@@ -77,22 +77,25 @@ class RotateDevice extends React.PureComponent {
         className="RotateDevice"
         active={active}
         orientation={orientation}
-        iconExists={icon !== undefined}
         backgroundColor={backgroundColor}
         backgroundImage={backgroundImage}
         fontColor={fontColor}
         zIndex={zIndex}
       >
-        {icon &&
-          <Icon
-            className="RotateDevice-Icon"
-            src={icon}
+        <Wrapper>
+          {icon &&
+            <Icon
+              className="RotateDevice-Icon"
+              src={icon}
+              orientation={orientation}
+            />}
+          <Title
+            className="RotateDevice-Title"
+            dangerouslySetInnerHTML={{ __html: title }}
             orientation={orientation}
-          />}
-        <Title
-          className="RotateDevice-Title"
-          dangerouslySetInnerHTML={{ __html: title }}
-        />
+            iconExists={icon !== undefined}
+          />
+        </Wrapper>
       </Section>
     );
   }

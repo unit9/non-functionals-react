@@ -6,9 +6,7 @@
   "scripts": {
     "start": "./node_modules/.bin/webpack-dev-server --config ./webpack.dev.config.js --mode development",
     "build": "./node_modules/.bin/webpack  --config ./webpack.prod.config.js --mode=production",
-    "build:docs": "./node_modules/.bin/webpack --config ./webpack.dev.config.js --mode production",
-    "deploy": "npm run build:docs && gcloud app deploy app.yaml --project non-functionals-react --version master",
-    "deploy:dev": "npm run build:docs && gcloud app deploy app.yaml --project non-functionals-react --version develop --no-promote"
+    "build:docs": "./node_modules/.bin/webpack --config ./webpack.dev.config.js --mode production"
   },
   "repository": {
     "type": "git",
@@ -23,6 +21,7 @@
     "@babel/preset-react": "^7.0.0-beta.48",
     "@babel/preset-stage-0": "^7.0.0-beta.48",
     "babel-loader": "^8.0.0-beta.2",
+    "babel-polyfill": "^6.26.0",
     "file-loader": "^1.1.11",
     "html-loader": "^0.5.5",
     "html-webpack-plugin": "^3.2.0",

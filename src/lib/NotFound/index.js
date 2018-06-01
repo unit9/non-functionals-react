@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import Wrapper from '../styles/Wrapper';
 import { Section, Icon, Title, Subtitle, Description, Cta } from './styles';
 
 class NotFound extends React.Component {
@@ -51,27 +52,29 @@ class NotFound extends React.Component {
         fontColor={fontColor}
         zIndex={zIndex}
       >
-        {icon && <Icon src={icon} className="NotFound-Icon" />}
-        <Title
-          className="NotFound-Title"
-          dangerouslySetInnerHTML={{ __html: title }}
-        />
-        <Subtitle
-          className="NotFound-Subtitle"
-          dangerouslySetInnerHTML={{ __html: subtitle }}
-        />
-        <Description
-          className="NotFound-Description"
-          dangerouslySetInnerHTML={{ __html: description }}
-        />
-        <Cta
-          className="NotFound-Cta"
-          backgroundColor={ctaBackgroundColor}
-          fontColor={ctaFontColor}
-          onClick={() => onContinue()}
-        >
-          {cta}
-        </Cta>
+        <Wrapper>
+          {icon && <Icon src={icon} className="NotFound-Icon" />}
+          <Title
+            className="NotFound-Title"
+            dangerouslySetInnerHTML={{ __html: title }}
+          />
+          <Subtitle
+            className="NotFound-Subtitle"
+            dangerouslySetInnerHTML={{ __html: subtitle }}
+          />
+          <Description
+            className="NotFound-Description"
+            dangerouslySetInnerHTML={{ __html: description }}
+          />
+          <Cta
+            className="NotFound-Cta"
+            backgroundColor={ctaBackgroundColor}
+            fontColor={ctaFontColor}
+            onClick={() => onContinue()}
+          >
+            {cta}
+          </Cta>
+        </Wrapper>
       </Section>
     );
   }

@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import UAParser from 'ua-parser-js';
 import debounce from 'lodash.debounce';
 
+import Wrapper from '../styles/Wrapper';
 import { Section, Icon, Title, Description } from './styles';
 
 const device = new UAParser().getResult().device.type;
@@ -74,12 +75,14 @@ class WindowTooSmall extends React.Component {
         fontColor={fontColor}
         zIndex={zIndex}
       >
-        {icon && <Icon className="WindowTooSmall-Icon" src={icon} />}
-        <Title className="WindowTooSmall-Title">{title}</Title>
-        <Description
-          className="WindowTooSmall-Description"
-          dangerouslySetInnerHTML={{ __html: description }}
-        />
+        <Wrapper>
+          {icon && <Icon className="WindowTooSmall-Icon" src={icon} />}
+          <Title className="WindowTooSmall-Title">{title}</Title>
+          <Description
+            className="WindowTooSmall-Description"
+            dangerouslySetInnerHTML={{ __html: description }}
+          />
+        </Wrapper>
       </Section>
     );
   }

@@ -2,10 +2,7 @@ import styled from 'styled-components';
 
 const Section = styled.div`
   
-  display: ${({ active }) => active ? 'flex' : 'none'};
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  display: ${({ active }) => active ? 'block' : 'none'};
 
   position: fixed;
   top: 0;
@@ -19,6 +16,7 @@ const Section = styled.div`
   background-size: cover;
 
   color: ${({ fontColor }) => fontColor};
+  text-align: center;
 
   z-index: ${({ zIndex }) => zIndex};
 
@@ -26,7 +24,7 @@ const Section = styled.div`
 
 const Icon = styled.img`
 
-  display: block;
+  display: inline-block;
   margin-bottom: 30px;
 
 `;
@@ -34,7 +32,6 @@ const Icon = styled.img`
 const Title = styled.h1`
   
   font-size: 34px;
-  text-align: center;
   margin: 0 0 10px 0;
 
 `;
@@ -42,7 +39,6 @@ const Title = styled.h1`
 const Description = styled.p`
 
   font-size: 22px;
-  text-align: center;
   margin: 0;
 
 `;

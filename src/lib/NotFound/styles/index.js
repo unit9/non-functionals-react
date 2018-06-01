@@ -2,11 +2,6 @@ import styled from 'styled-components';
 
 const Section = styled.div`
   
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-
   padding: 0 20px;
   box-sizing: border-box;
 
@@ -22,6 +17,7 @@ const Section = styled.div`
   background-size: cover;
 
   color: ${({ fontColor }) => fontColor};
+  text-align: center;
 
   z-index: ${({ zIndex }) => zIndex};
 
@@ -29,7 +25,7 @@ const Section = styled.div`
 
 const Icon = styled.img`
 
-  display: block;
+  display: inline-block;
   margin-bottom: 30px;
 
 `;
@@ -37,7 +33,6 @@ const Icon = styled.img`
 const Title = styled.h1`
   
   font-size: 100px;
-  text-align: center;
   margin: 0 0 30px 0;
 
 `;
@@ -45,8 +40,7 @@ const Title = styled.h1`
 const Subtitle = styled.h2`
 
   font-size: 32px;
-  text-align: center;
-  margin: 0 0 10px 0;
+  margin: 0 auto 10px auto;
   max-width: 600px;
 
 `;
@@ -54,7 +48,6 @@ const Subtitle = styled.h2`
 const Description = styled.p`
 
   font-size: 22px;
-  text-align: center;
   margin: 0 0 30px 0;
   max-width: 600px;
   opacity: 0.5;

@@ -1,14 +1,10 @@
 import styled from 'styled-components';
 
+import BaseWrapper from '../../styles/Wrapper';
+
 const Section = styled.div`
 
-  display: ${({ active }) => active ? 'flex' : 'none'};
-  flex-direction: ${({ orientation }) =>
-    orientation === 'landscape'
-      ? 'row'
-      : 'column'};
-  justify-content: center;
-  align-items: center;
+  display: ${({ active }) => active ? 'block' : 'none'};
 
   position: fixed;
   top: 0;
@@ -22,31 +18,42 @@ const Section = styled.div`
   background-size: cover;
 
   color: ${({ fontColor }) => fontColor};
-  text-align: ${({ orientation, iconExists }) =>
-    orientation === 'landscape' && iconExists
-      ? 'left'
-      : 'center'};
 
   z-index: ${({ zIndex }) => zIndex};
 
 `;
 
+const Wrapper = BaseWrapper.extend`
+
+  text-align: center;
+  width: 75%;
+
+`;
+
 const Icon = styled.img`
 
-  display: block;
-  margin: ${({ orientation }) =>
-    orientation === 'landscape'
-      ? '0 30px 0 0'
-      : '0 0 30px 0'};
+  display: inline-block;
+  vertical-align: middle;
+
+  margin: ${({ orientation }) => orientation === 'landscape' ? '0 30px 0 0' : '0 0 30px 0'};
 
 `;
 
 const Title = styled.h1`
 
+  display: ${({ orientation }) => orientation === 'landscape' ? 'inline-block' : 'block'};
+  vertical-align: middle;
+
+  text-align: ${({ orientation, iconExists }) =>
+    orientation === 'landscape' && iconExists
+      ? 'left'
+      : 'center'};
+
   font-size: 22px;
-  max-width: 40%;
-  margin: 0;
+
+  max-width:  ${({ orientation }) => orientation === 'landscape' ? '40%' : '75%'};
+  margin: 0 auto;
 
 `;
 
-export { Section, Icon, Title };
+export { Section, Wrapper, Icon, Title };

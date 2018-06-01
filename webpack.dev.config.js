@@ -3,7 +3,7 @@ const HtmlWebPackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   entry: [
-    'react-hot-loader/patch',
+    'babel-polyfill',
     './src/docs/index.js'
   ],
   output: {

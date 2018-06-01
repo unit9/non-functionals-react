@@ -1,11 +1,8 @@
 import styled from 'styled-components';
 
 const Section = styled.div`
-  
-  display: ${({ active }) => active ? 'flex' : 'none'};
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+
+  display: ${({ active }) => active ? 'block' : 'none'};
 
   padding: 0 20px;
   box-sizing: border-box;
@@ -23,6 +20,7 @@ const Section = styled.div`
 
   color: ${({ fontColor }) => fontColor};
   font-size: ${({ type }) => type === 'mobile' ? '16px' : '22px'};
+  text-align: center;
 
   z-index: ${({ zIndex }) => zIndex};
 
@@ -30,17 +28,24 @@ const Section = styled.div`
 
 const Icon = styled.img`
 
-  display: block;
+  display: inline-block;
   margin-bottom: 30px;
 
   width: ${({ type }) => type === 'mobile' ? '65px' : 'auto'};
 
+  @media (max-height: 500px) {
+    margin-bottom: 15px;
+  }
+
 `;
 
 const Title = styled.p`
-  
-  text-align: center;
+
   margin: 0 0 30px 0;
+
+  @media (max-height: 500px) {
+    margin-bottom: 15px;
+  }
 
 `;
 
@@ -51,15 +56,23 @@ const UnsupportedIcons = styled.div`
   img {
     display: inline-block;
     margin: 0 30px;
+    max-width: 50px;
+  }
+
+  @media (max-height: 500px) {
+    margin-bottom: 15px;
   }
 
 `;
 
 const Description = styled.p`
 
-  text-align: center;
-  margin: 0 0 30px 0;
+  margin: 0 auto 30px auto;
   max-width: 600px;
+
+  @media (max-height: 500px) {
+    margin-bottom: 15px;
+  }
 
 `;
 

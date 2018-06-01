@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import isWebglEnabled from 'detector-webgl';
 
+import Wrapper from '../styles/Wrapper';
 import { Section, Icon, Title, Description } from './styles';
 
 class WebGLNotEnabled extends React.Component {
@@ -51,12 +52,14 @@ class WebGLNotEnabled extends React.Component {
         fontColor={fontColor}
         zIndex={zIndex}
       >
-        {icon && <Icon className="WebGLNotEnabled-Icon" src={icon} />}
-        <Title className="WebGLNotEnabled-Title">{title}</Title>
-        <Description
-          className="WebGLNotEnabled-Description"
-          dangerouslySetInnerHTML={{ __html: description }}
-        />
+        <Wrapper>
+          {icon && <Icon className="WebGLNotEnabled-Icon" src={icon} />}
+          <Title className="WebGLNotEnabled-Title">{title}</Title>
+          <Description
+            className="WebGLNotEnabled-Description"
+            dangerouslySetInnerHTML={{ __html: description }}
+          />
+        </Wrapper>
       </Section>
     );
   }

@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 
 import BrowserDetection from './BrowserDetection';
 
+import Wrapper from '../styles/Wrapper';
 import { Section, Icon, Title, Description, UnsupportedIcons, Cta } from './styles';
 
 class Unsupported extends React.Component {
@@ -109,31 +110,33 @@ class Unsupported extends React.Component {
         zIndex={zIndex}
         type={this.browserDetection.type}
       >
-        {icon && <Icon src={icon} type={this.browserDetection.type} />}
-        <Title
-          className="Unsupported-Title"
-          dangerouslySetInnerHTML={{ __html: title }}
-        />
-        <UnsupportedIcons className="Unsupported-UnsupportedIcons">
-          {icons.map((icon) => <img src={icon} key={icon} />)}
-        </UnsupportedIcons>
-        <Description
-          className="Unsupported-Description"
-          dangerouslySetInnerHTML={{ __html: description }}
-        />
-        {this.browserDetection.isAppBrowser() &&
+        <Wrapper>
+          {icon && <Icon src={icon} type={this.browserDetection.type} />}
+          <Title
+            className="Unsupported-Title"
+            dangerouslySetInnerHTML={{ __html: title }}
+          />
+          <UnsupportedIcons className="Unsupported-UnsupportedIcons">
+            {icons.map((icon) => <img src={icon} key={icon} />)}
+          </UnsupportedIcons>
           <Description
-            className="Unsupported-SocialInstructions"
-            dangerouslySetInnerHTML={{ __html: socialInstructions }}
-          />}
-        <Cta
-          className="Unsupported-Cta"
-          backgroundColor={ctaBackgroundColor}
-          fontColor={ctaFontColor}
-          onClick={() => this.setState({ active: false })}
-        >
-          {cta}
-        </Cta>
+            className="Unsupported-Description"
+            dangerouslySetInnerHTML={{ __html: description }}
+          />
+          {this.browserDetection.isAppBrowser() &&
+            <Description
+              className="Unsupported-SocialInstructions"
+              dangerouslySetInnerHTML={{ __html: socialInstructions }}
+            />}
+          <Cta
+            className="Unsupported-Cta"
+            backgroundColor={ctaBackgroundColor}
+            fontColor={ctaFontColor}
+            onClick={() => this.setState({ active: false })}
+          >
+            {cta}
+          </Cta>
+        </Wrapper>
       </Section>
     );
   }

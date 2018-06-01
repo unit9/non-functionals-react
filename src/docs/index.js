@@ -75,7 +75,7 @@ const App = () => (
       minHeight={650}
       icon={windowTooSmallIcon}
       title="Window Too Small"
-      description="Please increase the size of your <br /> screen to view this website"
+      description="Please increase the size of your <br /> screen to view this website."
       fontColor="#FFF"
       backgroundImage={rotateBg}
       backgroundColor="#000"
@@ -84,10 +84,19 @@ const App = () => (
     <RotateDevice
       mobileOrientation="portrait"
       mobileIcon={rotateMobile}
-      mobileTitle="Please rotate your device vertically"
+      mobileTitle="Please rotate your device vertically."
       tabletOrientation="landscape"
       tabletIcon={rotateTablet}
-      tabletTitle="Please rotate your device horizontally"
+      tabletTitle="Please rotate your device horizontally."
+      fontColor="#FFF"
+      backgroundImage={rotateBg}
+      backgroundColor="#000"
+      zIndex={10000}
+    />
+    <WebGLNotEnabled
+      icon={warningIcon}
+      title="Sorry!"
+      description="We cannot detect WebGL in your browser. <br /> Please enable WebGL or switch to a desktop browser or device that supports WebGL to continue."
       fontColor="#FFF"
       backgroundImage={rotateBg}
       backgroundColor="#000"
@@ -98,23 +107,14 @@ const App = () => (
       icon={warningIcon}
       unsupportedIcons={unsupportedIcons}
       unsupportedIconsMobile={unsupportedIconsMobile}
-      title="This experience is optimised for <br /> Chrome 00+, Firefox 00+, Safari 0+, Internet Explorer 11+, Microsoft Edge 00+"
+      title="This experience is optimised for <br /> Chrome 65+, Firefox 56+, Safari 9+, Internet Explorer 11+, Microsoft Edge 14+"
       mobileTitle="This experience is optimised for Safari (iOS) and Chrome (Android)."
-      description="We recommend that you use one of these browsers. <br />You can go to https://whatbrowser.org/ to update your browser."
+      description={'We recommend that you use one of these browsers. <br />You can go to <a href="https://whatbrowser.org/" target="_blank">https://whatbrowser.org/</a> to update your browser.'}
       mobileDescription="We recommend that you use one of these browsers."
       socialInstructions="You can open this site directly in your browser by clicking the menu button in either the top-right or bottom-right of the screen."
       cta="Continue Anyway"
       ctaBackgroundColor="#000"
       ctaFontColor="#FFF"
-      fontColor="#FFF"
-      backgroundImage={rotateBg}
-      backgroundColor="#000"
-      zIndex={10000}
-    />
-    <WebGLNotEnabled
-      icon={windowTooSmallIcon}
-      title="Sorry!"
-      description="We cannot detect WebGL in your browser. <br /> Please enable WebGL or switch to a desktop browser or device that supports WebGL to continue."
       fontColor="#FFF"
       backgroundImage={rotateBg}
       backgroundColor="#000"
