@@ -24,6 +24,10 @@ const Section = styled.div`
 
   z-index: ${({ zIndex }) => zIndex};
 
+  @media (max-height: 500px) {
+    font-size: 14px;
+  }
+
 `;
 
 const Icon = styled.img`
@@ -34,7 +38,8 @@ const Icon = styled.img`
   width: ${({ type }) => type === 'mobile' ? '65px' : 'auto'};
 
   @media (max-height: 500px) {
-    margin-bottom: 15px;
+    margin-bottom: 10px;
+    width: 50px;
   }
 
 `;
@@ -44,7 +49,7 @@ const Title = styled.p`
   margin: 0 0 30px 0;
 
   @media (max-height: 500px) {
-    margin-bottom: 15px;
+    margin-bottom: 10px;
   }
 
 `;
@@ -60,7 +65,11 @@ const UnsupportedIcons = styled.div`
   }
 
   @media (max-height: 500px) {
-    margin-bottom: 15px;
+    margin-bottom: 10px;
+
+    img {
+      max-width: 35px;
+    }
   }
 
 `;
@@ -86,6 +95,10 @@ const Cta = styled.button`
   border: none;
   padding: 15px 40px;
   cursor: pointer;
+
+  @media (max-height: 500px) {
+    padding: 10px 30px;
+  }
 
 `;
 
