@@ -35,6 +35,10 @@ const Title = styled.h1`
   font-size: 100px;
   margin: 0 0 30px 0;
 
+  @media (max-width: 600px) {
+    font-size: 60px;
+  }
+
 `;
 
 const Subtitle = styled.h2`
@@ -43,12 +47,16 @@ const Subtitle = styled.h2`
   margin: 0 auto 10px auto;
   max-width: 600px;
 
+  @media (max-width: 600px) {
+    font-size: 22px;
+  }
+
 `;
 
 const Description = styled.p`
 
   font-size: 22px;
-  margin: 0 0 30px 0;
+  margin: 0 auto 30px auto;
   max-width: 600px;
   opacity: 0.5;
 
