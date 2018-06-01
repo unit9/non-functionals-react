@@ -20,6 +20,8 @@ const Button = styled.button`
   display: inline-block;
   color: white;
   padding: 0;
+  background: none;
+  border: none;
 
 `;
 
