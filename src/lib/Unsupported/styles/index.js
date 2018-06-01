@@ -25,7 +25,7 @@ const Section = styled.div`
   z-index: ${({ zIndex }) => zIndex};
 
   @media (max-height: 500px) {
-    font-size: 14px;
+    font-size: 10px;
   }
 
 `;
