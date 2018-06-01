@@ -53,7 +53,7 @@ class BrowserDetection {
             if (browser === 'chrome' || browser === 'firefox' || browser === 'edge') {
               version = value - 1;
             }
-            return this.compareVersions(value, this.parser.getBrowser().version);
+            return this.compareVersions(version, this.parser.getBrowser().version);
           default:
             return false;
         }
