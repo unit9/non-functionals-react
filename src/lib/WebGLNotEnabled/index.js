@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import isWebglEnabled from 'detector-webgl';
+import isHtml from "is-html";
 
 import Wrapper from '../styles/Wrapper';
 import { Section, Icon, Title, Description } from './styles';
@@ -8,8 +9,8 @@ import { Section, Icon, Title, Description } from './styles';
 class WebGLNotEnabled extends React.Component {
   static propTypes = {
     icon: PropTypes.string,
-    title: PropTypes.string.isRequired,
-    description: PropTypes.string.isRequired,
+    title: PropTypes.oneOfType([PropTypes.string, PropTypes.element]).isRequired,
+    description: PropTypes.oneOfType([PropTypes.string, PropTypes.element]).isRequired,
     fontColor: PropTypes.string,
     backgroundColor: PropTypes.string,
     backgroundImage: PropTypes.string,
@@ -55,10 +56,16 @@ class WebGLNotEnabled extends React.Component {
         <Wrapper>
           {icon && <Icon className="WebGLNotEnabled-Icon" src={icon} />}
           <Title className="WebGLNotEnabled-Title">{title}</Title>
-          <Description
-            className="WebGLNotEnabled-Description"
-            dangerouslySetInnerHTML={{ __html: description }}
-          />
+          {isHtml(description) ? (
+            <Description
+              className="WebGLNotEnabled-Description"
+              dangerouslySetInnerHTML={{ __html: description }}
+            />
+          ) : (
+            <Description className="WebGLNotEnabled-Description">
+              {description}
+            </Description>
+          )}
         </Wrapper>
       </Section>
     );

@@ -1,6 +1,6 @@
 {
   "name": "non-functionals-react",
-  "version": "0.1.3",
+  "version": "0.1.11",
   "description": "A set of components available via the NPM registry for easy integration into any UNIT9 project using React.",
   "main": "./dist/lib/index.js",
   "scripts": {
@@ -48,6 +48,7 @@
   },
   "dependencies": {
     "detector-webgl": "^2.0.0",
+    "is-html": "^1.1.0",
     "lodash.debounce": "^4.0.8",
     "platform": "^1.3.5",
     "prop-types": "^15.6.1",
