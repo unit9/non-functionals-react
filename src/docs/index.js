@@ -9,7 +9,7 @@ import {
   WindowTooSmall,
   WebGLNotEnabled,
   Unsupported,
-} from '../lib';
+} from './../lib';
 
 import rotateMobile from './images/rotate-mobile.png';
 import rotateTablet from './images/rotate-tablet.png';
@@ -51,15 +51,15 @@ injectGlobal`
 `;
 
 const unsupportedIcons = [
-  chromeIcon,
-  edgeIcon,
-  firefoxIcon,
-  ieIcon,
-  safariIcon,
+  { image: chromeIcon, label: 'Chrome 65+' },
+  { image: edgeIcon, label: 'Edge 14+' },
+  { image: firefoxIcon, label: 'Firefox 56+' },
+  { image: ieIcon, label: 'Internet Explorer 11+' },
+  { image: safariIcon, label: 'Safari 9+' },
 ];
 const unsupportedIconsMobile = [
-  safariIcon,
-  chromeIcon,
+  { image: safariIcon, label: 'Safari (iOS)' },
+  { image: chromeIcon, label: 'Chrome (Android)' },
 ];
 
 const supported = {
@@ -134,8 +134,8 @@ const App = () => (
       icon={warningIcon}
       unsupportedIcons={unsupportedIcons}
       unsupportedIconsMobile={unsupportedIconsMobile}
-      title="This experience is optimised for <br /> Chrome 65+, Firefox 56+, Safari 9+, Internet Explorer 11+, Microsoft Edge 14+"
-      mobileTitle="This experience is optimised for Safari (iOS) and Chrome (Android)."
+      title="This experience is optimised for"
+      mobileTitle="This experience is optimised for"
       description={'We recommend that you use one of these browsers. <br />You can go to <a href="https://whatbrowser.org/" target="_blank">https://whatbrowser.org/</a> to update your browser.'}
       mobileDescription="We recommend that you use one of these browsers."
       socialInstructions="You can open this site directly in your browser by clicking the menu button in either the top-right or bottom-right of the screen."

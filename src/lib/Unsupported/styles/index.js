@@ -58,14 +58,29 @@ const UnsupportedIcons = styled.div`
 
   margin-bottom: 30px;
 
-  img {
+  div {
     display: inline-block;
-    margin: 0 30px;
+    vertical-align: top;
+
+    &:not(:last-child) {
+      margin-right: 30px;
+    }
+  }
+
+  img {
+    height: 50px;
     max-width: 50px;
   }
 
+  span {
+    margin-top: 15px;
+    display: block;
+  }
+
   @media (max-height: 500px) {
-    margin-bottom: 10px;
+    div {
+      margin-bottom: 10px;
+    }
 
     img {
       max-width: 35px;

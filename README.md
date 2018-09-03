@@ -17,7 +17,7 @@ A set of simple React components for non functional pages that are easy to imple
 
 ## Usage:
 
-Simply import the components you need: 
+Simply import the components you need:
 
 `import { NotFound, RotateDevice } from 'non-functionals-react';`
 
@@ -135,10 +135,16 @@ The `supported` prop must follow this pattern:
     { os: 'android', browser: 'chrome' },
   ],
   mobile: [
-    { os: 'ios', browser: 'mobile 1safari' },
+    { os: 'ios', browser: 'mobile safari' },
     { os: 'android', browser: 'chrome' },
   ],
 }
+```
+
+The `unsupportedIcons` and `unsupportedIconsMobile` props must follow this pattern:
+
+```javascript
+  { image: 'url', label: 'Optional label' },
 ```
 
 Please adjust **_ONLY_** the following properties to fit your specific project:
@@ -152,7 +158,10 @@ Please adjust **_ONLY_** the following properties to fit your specific project:
   <img class="Unsupported-Icon" />
   <h1 class="Unsupported-Title" />
   <div class="Unsupported-UnsupportedIcons">
-    <img />
+    <div>
+      <img />
+      <span>{Label}</span>
+    </div>
   </div>
   <p class="Unsupported-Description" />
   <p class="Unsupported-SocialInstructions" />
@@ -215,7 +224,7 @@ Please adjust **_ONLY_** the following properties to fit your specific project:
 
 | prop    | type   | required | description |
 | ------- | ------ | -------- | ----------- |
-| version | string | yes      | 
+| version | string | yes      |
 | live    | bool   | yes      | if `true` then component will be hidden |
 
 ##### Note:

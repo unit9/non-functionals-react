@@ -117,7 +117,12 @@ class Unsupported extends React.Component {
             dangerouslySetInnerHTML={{ __html: title }}
           />
           <UnsupportedIcons className="Unsupported-UnsupportedIcons">
-            {icons.map((icon) => <img src={icon} key={icon} />)}
+            {icons.map((icon) => (
+              <div>
+                <img src={icon.image} key={icon.image} />
+                {icon.label && <span>{icon.label}</span>}
+              </div>
+            ))}
           </UnsupportedIcons>
           <Description
             className="Unsupported-Description"
