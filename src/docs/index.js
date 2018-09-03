@@ -22,6 +22,7 @@ import firefoxIcon from './images/unsupported/firefox.png';
 import ieIcon from './images/unsupported/ie.png';
 import safariIcon from './images/unsupported/safari.png';
 import warningIcon from './images/unsupported/warning.png';
+import { CookieNotice } from '../lib/CookieNotice';
 
 const unsupportedIcons = [
   chromeIcon,
@@ -119,6 +120,13 @@ const App = () => (
       backgroundImage={rotateBg}
       backgroundColor="#000"
       zIndex={10000}
+    />
+    <CookieNotice
+      text="We use cookies to provide you with a better onsite experience. By continuing to browse the site you are agreeing to our use of cookies in accordance with our <a href='https://www.unit9.com/' target=_blank>Cookie Policy</a>"
+      fontColor="#FFF"
+      backgroundColor="#000"
+      zIndex={10000}
+      onCloseClick={() => console.log('close clicked')}
     />
   </div>
 );

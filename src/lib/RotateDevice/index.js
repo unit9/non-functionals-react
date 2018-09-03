@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import UAParser from 'ua-parser-js';
 import debounce from 'lodash.debounce';
+import isHtml from "is-html";
 
 import { Section, Wrapper, Icon, Title } from './styles';
 
@@ -9,12 +10,12 @@ const device = new UAParser().getResult().device.type;
 
 class RotateDevice extends React.PureComponent {
   static propTypes = {
-    mobileOrientation: PropTypes.string.isRequired,
+    mobileOrientation: PropTypes.oneOfType([PropTypes.string, PropTypes.element]).isRequired,
     mobileIcon: PropTypes.string,
-    mobileTitle: PropTypes.string.isRequired,
-    tabletOrientation: PropTypes.string.isRequired,
+    mobileTitle: PropTypes.oneOfType([PropTypes.string, PropTypes.element]).isRequired,
+    tabletOrientation: PropTypes.oneOfType([PropTypes.string, PropTypes.element]).isRequired,
     tabletIcon: PropTypes.string,
-    tabletTitle: PropTypes.string.isRequired,
+    tabletTitle: PropTypes.oneOfType([PropTypes.string, PropTypes.element]).isRequired,
     fontColor: PropTypes.string,
     backgroundColor: PropTypes.string,
     backgroundImage: PropTypes.string,
@@ -89,12 +90,22 @@ class RotateDevice extends React.PureComponent {
               src={icon}
               orientation={orientation}
             />}
-          <Title
-            className="RotateDevice-Title"
-            dangerouslySetInnerHTML={{ __html: title }}
-            orientation={orientation}
-            iconExists={icon !== undefined}
-          />
+          {isHtml(title) ? (
+            <Title
+              className="RotateDevice-Title"
+              dangerouslySetInnerHTML={{ __html: title }}
+              orientation={orientation}
+              iconExists={icon !== undefined}
+            />
+          ) : (
+            <Title
+              className="RotateDevice-Title"
+              orientation={orientation}
+              iconExists={icon !== undefined}
+            >
+              {title}
+            </Title>
+          )}
         </Wrapper>
       </Section>
     );
