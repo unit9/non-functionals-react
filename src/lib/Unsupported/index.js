@@ -37,8 +37,8 @@ class Unsupported extends React.Component {
       )
     }).isRequired,
     icon: PropTypes.string,
-    unsupportedIcons: PropTypes.arrayOf(PropTypes.string).isRequired,
-    unsupportedIconsMobile: PropTypes.arrayOf(PropTypes.string).isRequired,
+    unsupportedIcons: PropTypes.arrayOf(PropTypes.object).isRequired,
+    unsupportedIconsMobile: PropTypes.arrayOf(PropTypes.object).isRequired,
     title: PropTypes.oneOfType([PropTypes.string, PropTypes.element])
       .isRequired,
     mobileTitle: PropTypes.oneOfType([PropTypes.string, PropTypes.element])
@@ -163,8 +163,8 @@ class Unsupported extends React.Component {
           )}
           <UnsupportedIcons className="Unsupported-UnsupportedIcons">
             {icons.map((icon) => (
-              <div>
-                <img src={icon.image} key={icon.image} />
+              <div key={icon.label}>
+                <img src={icon.image} />
                 {icon.label && <span>{icon.label}</span>}
               </div>
             ))}
