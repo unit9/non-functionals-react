@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { injectGlobal } from 'styled-components';
 
 import {
   BuildVersion,
@@ -22,6 +23,32 @@ import firefoxIcon from './images/unsupported/firefox.png';
 import ieIcon from './images/unsupported/ie.png';
 import safariIcon from './images/unsupported/safari.png';
 import warningIcon from './images/unsupported/warning.png';
+
+injectGlobal`
+
+  html {
+    font-family: sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6, p, a, span, button, input {
+    color: inherit;
+    font-family: inherit;
+    font-weight: inherit;
+    font-size: inherit;
+    line-height: inherit;
+  }
+
+  button {
+    cursor: pointer;
+    outline: none;
+    -webkit-appearance: none;
+  }
+
+  button, div, a, span {
+    -webkit-tap-highlight-color: transparent;
+  }
+
+`;
 
 const unsupportedIcons = [
   chromeIcon,
