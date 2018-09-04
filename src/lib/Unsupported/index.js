@@ -70,14 +70,9 @@ class Unsupported extends React.Component {
     zIndex: 10000
   };
 
-  state = {
-    active: false,
-    title: null,
-    icons: null,
-    description: null
-  };
+  constructor(props) {
+    super(props);
 
-  componentWillMount() {
     const {
       supported,
       title,
@@ -86,26 +81,34 @@ class Unsupported extends React.Component {
       unsupportedIconsMobile,
       description,
       mobileDescription
-    } = this.props;
+    } = props;
 
     this.browserDetection = new BrowserDetection(supported);
-
     window.browserDetection = this.browserDetection;
+    let initialState = {
+      active: false,
+      title: null,
+      icons: null,
+      description: null
+    };
 
     const { type } = this.browserDetection;
     if (type === "mobile" || type === "tablet") {
-      this.setState({
+      initialState = {
+        ...initialState,
         title: mobileTitle,
         icons: unsupportedIconsMobile,
         description: mobileDescription
-      });
+      };
     } else {
-      this.setState({ title, icons: unsupportedIcons, description });
+      initialState = { ...initialState, title, icons: unsupportedIcons, description };
     }
 
     if (!this.browserDetection.isSupported()) {
-      this.setState({ active: true });
+      initialState = { ...initialState, active: true };
     }
+
+    this.state = { ...initialState };
   }
 
   renderSocialInstructions = () => {

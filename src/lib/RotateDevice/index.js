@@ -30,23 +30,29 @@ class RotateDevice extends React.PureComponent {
     zIndex: 10000,
   }
 
-  state = {
-    active: false,
-    orientation: null,
-    title: null,
-    icon: null,
-  }
+  constructor(props) {
+    super(props);
+    const { mobileIcon, mobileTitle, tabletIcon, tabletTitle } = props;
 
-  componentWillMount() {
-    const { mobileIcon, mobileTitle, tabletIcon, tabletTitle } = this.props;
+    let initialState = {
+      active: false,
+      orientation: null,
+      title: null,
+      icon: null,
+    };
+
     if (device === 'mobile') {
-      this.setState({ title: mobileTitle, icon: mobileIcon });
+      initialState = { ...initialState, title: mobileTitle, icon: mobileIcon };
     }
     if (device === 'tablet') {
-      this.setState({ title: tabletTitle, icon: tabletIcon });
+      initialState = { ...initialState, title: tabletTitle, icon: tabletIcon };
     }
 
-    window.addEventListener('resize', debounce(this.onResize, 50));
+    this.state = { ...initialState };
+  }
+
+  componentDidMount() {
+    window.addEventListener('resize', this.onResize);
     this.onResize();
   }
 
@@ -54,7 +60,7 @@ class RotateDevice extends React.PureComponent {
     window.removeEventListener('resize', this.onResize);
   }
 
-  onResize = () => {
+  onResize = debounce(() => {
     const { mobileOrientation, tabletOrientation } = this.props;
     const orientation =
       window.innerWidth > window.innerHeight ? 'landscape' : 'portrait';
@@ -67,7 +73,7 @@ class RotateDevice extends React.PureComponent {
     } else {
       this.setState({ active: false, orientation });
     }
-  }
+  }, 500);
 
   render() {
     const { fontColor, backgroundColor, backgroundImage, zIndex } = this.props;
