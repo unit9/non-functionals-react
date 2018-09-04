@@ -62,6 +62,10 @@ const unsupportedIconsMobile = [
   { image: safariIcon, label: 'Safari (iOS)' },
   { image: chromeIcon, label: 'Chrome (Android)' },
 ];
+const unsupportedIconsTablet = [
+  { image: chromeIcon, label: 'Chrome (Android)' },
+  { image: safariIcon, label: 'Safari (iOS)' },
+];
 
 const supported = {
   desktop: [
@@ -135,10 +139,13 @@ const App = () => (
       icon={warningIcon}
       unsupportedIcons={unsupportedIcons}
       unsupportedIconsMobile={unsupportedIconsMobile}
+      unsupportedIconsTablet={unsupportedIconsTablet}
       title="This experience is optimised for"
       mobileTitle="This experience is optimised for"
+      tabletTitle="[TABLET] This experience is optimised for"
       description={'We recommend that you use one of these browsers. <br />You can go to <a href="https://whatbrowser.org/" target="_blank">https://whatbrowser.org/</a> to update your browser.'}
       mobileDescription="We recommend that you use one of these browsers."
+      tabletDescription="[TABLET] We recommend that you use one of these browsers."
       socialInstructions="You can open this site directly in your browser by clicking the menu button in either the top-right or bottom-right of the screen."
       cta="Continue Anyway"
       ctaBackgroundColor="#000"

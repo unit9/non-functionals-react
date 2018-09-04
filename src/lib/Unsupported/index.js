@@ -37,18 +37,24 @@ class Unsupported extends React.Component {
       )
     }).isRequired,
     icon: PropTypes.string,
-    unsupportedIcons: PropTypes.arrayOf(PropTypes.object).isRequired,
-    unsupportedIconsMobile: PropTypes.arrayOf(PropTypes.object).isRequired,
+    unsupportedIcons: PropTypes.arrayOf(PropTypes.object),
+    unsupportedIconsMobile: PropTypes.arrayOf(PropTypes.object),
+    unsupportedIconsTablet: PropTypes.arrayOf(PropTypes.object),
     title: PropTypes.oneOfType([PropTypes.string, PropTypes.element])
       .isRequired,
     mobileTitle: PropTypes.oneOfType([PropTypes.string, PropTypes.element])
       .isRequired,
+    tabletTitle: PropTypes.oneOfType([PropTypes.string, PropTypes.element]),
     description: PropTypes.oneOfType([PropTypes.string, PropTypes.element])
       .isRequired,
     mobileDescription: PropTypes.oneOfType([
       PropTypes.string,
       PropTypes.element
     ]).isRequired,
+    tabletDescription: PropTypes.oneOfType([
+      PropTypes.string,
+      PropTypes.element
+    ]),
     socialInstructions: PropTypes.oneOfType([
       PropTypes.string,
       PropTypes.element
@@ -82,10 +88,13 @@ class Unsupported extends React.Component {
       supported,
       title,
       mobileTitle,
+      tabletTitle,
       unsupportedIcons,
       unsupportedIconsMobile,
+      unsupportedIconsTablet,
       description,
-      mobileDescription
+      mobileDescription,
+      tabletDescription
     } = this.props;
 
     this.browserDetection = new BrowserDetection(supported);
@@ -93,7 +102,13 @@ class Unsupported extends React.Component {
     window.browserDetection = this.browserDetection;
 
     const { type } = this.browserDetection;
-    if (type === "mobile" || type === "tablet") {
+    if (type === "tablet") {
+      this.setState({
+        title: tabletTitle ? tabletTitle : mobileTitle,
+        icons: unsupportedIconsTablet ? unsupportedIconsTablet : unsupportedIconsMobile,
+        description: tabletDescription ? tabletDescription : mobileDescription
+      });
+    } else if (type === "mobile") {
       this.setState({
         title: mobileTitle,
         icons: unsupportedIconsMobile,
@@ -161,14 +176,16 @@ class Unsupported extends React.Component {
               {title}
             </Title>
           )}
-          <UnsupportedIcons className="Unsupported-UnsupportedIcons">
-            {icons.map((icon) => (
-              <div key={icon.label}>
-                <img src={icon.image} />
-                {icon.label && <span>{icon.label}</span>}
-              </div>
-            ))}
-          </UnsupportedIcons>
+          {icons &&
+            <UnsupportedIcons className="Unsupported-UnsupportedIcons">
+              {icons.map((icon) => (
+                <div key={icon.label}>
+                  <img src={icon.image} />
+                  {icon.label && <span>{icon.label}</span>}
+                </div>
+              ))}
+            </UnsupportedIcons>
+          }
           {isHtml(description) ? (
             <Description
               className="Unsupported-Description"
