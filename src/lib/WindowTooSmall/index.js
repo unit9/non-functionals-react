@@ -34,8 +34,8 @@ class WindowTooSmall extends React.Component {
     active: false
   };
 
-  componentWillMount() {
-    window.addEventListener("resize", debounce(this.onResize, 50));
+  componentDidMount() {
+    window.addEventListener("resize", this.onResize);
     this.onResize();
   }
 
@@ -43,7 +43,7 @@ class WindowTooSmall extends React.Component {
     window.removeEventListener("resize", this.onResize);
   }
 
-  onResize = () => {
+  onResize = debounce(() => {
     const { minWidth, minHeight } = this.props;
 
     if (
@@ -54,7 +54,7 @@ class WindowTooSmall extends React.Component {
     } else {
       this.setState({ active: false });
     }
-  };
+  }, 500);
 
   render() {
     const {

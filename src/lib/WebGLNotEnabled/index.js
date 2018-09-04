@@ -23,12 +23,9 @@ class WebGLNotEnabled extends React.Component {
     zIndex: 10000,
   };
 
-  state = {
-    active: false,
-  }
-
-  componentWillMount() {
-    this.setState({ active: !isWebglEnabled });
+  constructor(props) {
+    super(props);
+    this.state = { active: !isWebglEnabled };
   }
 
   render() {

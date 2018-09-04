@@ -37,8 +37,8 @@ class Unsupported extends React.Component {
       )
     }).isRequired,
     icon: PropTypes.string,
-    unsupportedIcons: PropTypes.arrayOf(PropTypes.string).isRequired,
-    unsupportedIconsMobile: PropTypes.arrayOf(PropTypes.string).isRequired,
+    unsupportedIcons: PropTypes.arrayOf(PropTypes.object).isRequired,
+    unsupportedIconsMobile: PropTypes.arrayOf(PropTypes.object).isRequired,
     title: PropTypes.oneOfType([PropTypes.string, PropTypes.element])
       .isRequired,
     mobileTitle: PropTypes.oneOfType([PropTypes.string, PropTypes.element])
@@ -70,14 +70,9 @@ class Unsupported extends React.Component {
     zIndex: 10000
   };
 
-  state = {
-    active: false,
-    title: null,
-    icons: null,
-    description: null
-  };
+  constructor(props) {
+    super(props);
 
-  componentWillMount() {
     const {
       supported,
       title,
@@ -86,26 +81,34 @@ class Unsupported extends React.Component {
       unsupportedIconsMobile,
       description,
       mobileDescription
-    } = this.props;
+    } = props;
 
     this.browserDetection = new BrowserDetection(supported);
-
     window.browserDetection = this.browserDetection;
+    let initialState = {
+      active: false,
+      title: null,
+      icons: null,
+      description: null
+    };
 
     const { type } = this.browserDetection;
     if (type === "mobile" || type === "tablet") {
-      this.setState({
+      initialState = {
+        ...initialState,
         title: mobileTitle,
         icons: unsupportedIconsMobile,
         description: mobileDescription
-      });
+      };
     } else {
-      this.setState({ title, icons: unsupportedIcons, description });
+      initialState = { ...initialState, title, icons: unsupportedIcons, description };
     }
 
     if (!this.browserDetection.isSupported()) {
-      this.setState({ active: true });
+      initialState = { ...initialState, active: true };
     }
+
+    this.state = { ...initialState };
   }
 
   renderSocialInstructions = () => {
@@ -163,8 +166,8 @@ class Unsupported extends React.Component {
           )}
           <UnsupportedIcons className="Unsupported-UnsupportedIcons">
             {icons.map((icon) => (
-              <div>
-                <img src={icon.image} key={icon.image} />
+              <div key={icon.label}>
+                <img src={icon.image} />
                 {icon.label && <span>{icon.label}</span>}
               </div>
             ))}
