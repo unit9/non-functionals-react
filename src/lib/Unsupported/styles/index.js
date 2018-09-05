@@ -1,28 +1,18 @@
 import styled from 'styled-components';
 
-const Section = styled.div`
+import {
+  Section as BaseSection,
+  Icon as BaseIcon,
+  Cta as BaseCta,
+} from './../../styles/shared';
 
-  display: ${({ active }) => active ? 'block' : 'none'};
+const Section = styled(BaseSection)`
 
   padding: 0 20px;
   box-sizing: border-box;
 
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-
-  background-color: ${({ backgroundColor }) => backgroundColor};
-  background-image: ${({ backgroundImage }) => backgroundImage && `url(${backgroundImage})`};
-  background-size: cover;
-
-  color: ${({ fontColor }) => fontColor};
   font-size: ${({ type }) => type === 'mobile' ? '16px' : '22px'};
   text-align: center;
-
-  z-index: ${({ zIndex }) => zIndex};
 
   @media (max-height: 500px) {
     font-size: 10px;
@@ -30,10 +20,7 @@ const Section = styled.div`
 
 `;
 
-const Icon = styled.img`
-
-  display: inline-block;
-  margin-bottom: 30px;
+const Icon = styled(BaseIcon)`
 
   width: ${({ type }) => type === 'mobile' ? '65px' : 'auto'};
 
@@ -100,16 +87,7 @@ const Description = styled.p`
 
 `;
 
-const Cta = styled.button`
-
-  margin: 0;
-  max-width: 600px;
-  background-color: ${({ backgroundColor }) => backgroundColor};
-  color: ${({ fontColor }) => fontColor};
-  border-radius: 5px;
-  border: none;
-  padding: 15px 40px;
-  cursor: pointer;
+const Cta = styled(BaseCta)`
 
   @media (max-height: 500px) {
     padding: 10px 30px;
