@@ -3,24 +3,13 @@ import PropTypes from 'prop-types';
 import isWebglEnabled from 'detector-webgl';
 import isHtml from "is-html";
 
-import Wrapper from '../styles/Wrapper';
-import { Section, Icon, Title, Description } from './styles';
+import { Section, Icon, Title, Description, Wrapper } from './styles';
 
 class WebGLNotEnabled extends React.Component {
   static propTypes = {
     icon: PropTypes.string,
     title: PropTypes.oneOfType([PropTypes.string, PropTypes.element]).isRequired,
     description: PropTypes.oneOfType([PropTypes.string, PropTypes.element]).isRequired,
-    fontColor: PropTypes.string,
-    backgroundColor: PropTypes.string,
-    backgroundImage: PropTypes.string,
-    zIndex: PropTypes.number,
-  };
-
-  static defaultProps = {
-    fontColor: '#000',
-    backgroundColor: '#FFF',
-    zIndex: 10000,
   };
 
   constructor(props) {
@@ -33,22 +22,14 @@ class WebGLNotEnabled extends React.Component {
       icon,
       title,
       description,
-      fontColor,
-      backgroundColor,
-      backgroundImage,
-      zIndex,
     } = this.props;
 
     const { active } = this.state;
 
     return (
       <Section
-        className="WebGLNotEnabled"
+        className="WebGLNotEnabled NonFunctionals"
         active={active}
-        backgroundColor={backgroundColor}
-        backgroundImage={backgroundImage}
-        fontColor={fontColor}
-        zIndex={zIndex}
       >
         <Wrapper>
           {icon && <Icon className="WebGLNotEnabled-Icon" src={icon} />}

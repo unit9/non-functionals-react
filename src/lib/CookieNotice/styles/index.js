@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 const Section = styled.div`
-  
+
   display: ${({ active }) => active ? 'block' : 'none'};
 
   position: fixed;
@@ -10,12 +10,12 @@ const Section = styled.div`
   width: 100%;
   padding: 15px 0;
 
-  background-color: ${({ backgroundColor }) => backgroundColor};
+  background-color: #000;
 
-  color: ${({ fontColor }) => fontColor};
+  color: #FFF;
   text-align: center;
 
-  z-index: ${({ zIndex }) => zIndex};
+  z-index: 10000;
 
 `;
 
@@ -40,7 +40,7 @@ const Close = styled.span`
   width: 30px;
   height: 30px;
 
-  border: 1px solid ${({ fontColor }) => fontColor};
+  border: 1px solid #FFF;
   border-radius: 30px;
 
   cursor: pointer;
@@ -48,17 +48,17 @@ const Close = styled.span`
   &:before,
   &:after {
     content: '';
-    
+
     display: block;
     position: absolute;
     top: 50%;
     left: 50%;
-    
+
     width: 1px;
     height: calc(100% - 15px);
-    
-    background-color: ${({ fontColor }) => fontColor};
-    
+
+    background-color: #FFF;
+
     transform: translateY(-50%) rotate(-45deg);
     transform-origin: 50%;
   }

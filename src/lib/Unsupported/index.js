@@ -4,14 +4,14 @@ import isHtml from "is-html";
 
 import BrowserDetection from "./BrowserDetection";
 
-import Wrapper from "../styles/Wrapper";
 import {
   Section,
   Icon,
   Title,
   Description,
   UnsupportedIcons,
-  Cta
+  Cta,
+  Wrapper
 } from "./styles";
 
 class Unsupported extends React.Component {
@@ -60,20 +60,6 @@ class Unsupported extends React.Component {
       PropTypes.element
     ]).isRequired,
     cta: PropTypes.oneOfType([PropTypes.string, PropTypes.element]).isRequired,
-    ctaBackgroundColor: PropTypes.string,
-    ctaFontColor: PropTypes.string,
-    fontColor: PropTypes.string,
-    backgroundColor: PropTypes.string,
-    backgroundImage: PropTypes.string,
-    zIndex: PropTypes.number
-  };
-
-  static defaultProps = {
-    fontColor: "#000",
-    ctaBackgroundColor: "#000",
-    ctaFontColor: "#FFF",
-    backgroundColor: "#FFF",
-    zIndex: 10000
   };
 
   constructor(props) {
@@ -148,24 +134,14 @@ class Unsupported extends React.Component {
     const {
       icon,
       cta,
-      fontColor,
-      ctaBackgroundColor,
-      ctaFontColor,
-      backgroundColor,
-      backgroundImage,
-      zIndex
     } = this.props;
 
     const { active, title, icons, description } = this.state;
 
     return (
       <Section
-        className="Unsupported"
+        className="Unsupported NonFunctionals"
         active={active}
-        backgroundColor={backgroundColor}
-        backgroundImage={backgroundImage}
-        fontColor={fontColor}
-        zIndex={zIndex}
         type={this.browserDetection.type}
       >
         <Wrapper>
@@ -203,8 +179,6 @@ class Unsupported extends React.Component {
           {this.renderSocialInstructions()}
           <Cta
             className="Unsupported-Cta"
-            backgroundColor={ctaBackgroundColor}
-            fontColor={ctaFontColor}
             onClick={() => this.setState({ active: false })}
           >
             {cta}

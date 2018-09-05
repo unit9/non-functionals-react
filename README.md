@@ -29,7 +29,6 @@ and add them to your render method:
   subtitle="Sorry, something has gone wrong."
   description="We can't find what you're looking for."
   cta="Back to Home"
-  zIndex={10000}
   onContinue={() => console.log('continue')}
 />
 ```
@@ -47,17 +46,11 @@ and add them to your render method:
 | subtitle           | string   | yes      |
 | description        | string   | yes      |
 | cta                | string   | yes      |
-| ctaBackgroundColor | string   | no       |
-| ctaFontColor       | string   | no       |
-| fontColor          | string   | no       |
-| backgroundColor    | string   | no       |
-| backgroundImage    | string   | no       |
-| zIndex             | number   | no       |
 | onContinue         | function | yes      |
 
 ##### HTML structure:
 ```html
-<div class="NotFound">
+<div class="NotFound NonFunctionals">
   <img class="NotFound-Icon" />
   <h1 class="NotFound-Title" />
   <h2 class="NotFound-Subtitle" />
@@ -79,15 +72,10 @@ and add them to your render method:
 | tabletOrientation  | string   | yes      |
 | tabletIcon         | string   | no       |
 | tabletTitle        | string   | yes      |
-| fontFamily         | string   | no       |
-| fontColor          | string   | no       |
-| backgroundColor    | string   | no       |
-| backgroundImage    | string   | no       |
-| zIndex             | number   | no       |
 
 ##### HTML structure:
 ```html
-<div class="RotateDevice">
+<div class="RotateDevice NonFunctionals">
   <img class="RotateDevice-Icon" />
   <h1 class="RotateDevice-Title" />
 </div>
@@ -110,12 +98,6 @@ and add them to your render method:
 | mobileDescription      | string   | yes      |
 | socialInstructions     | string   | yes      |
 | cta                    | string   | yes      |
-| ctaBackgroundColor     | number   | no       |
-| ctaFontColor           | string   | no       |
-| fontColor              | string   | no       |
-| backgroundColor        | string   | no       |
-| backgroundImage        | string   | no       |
-| zIndex                 | number   | no       |
 
 ##### Note:
 
@@ -154,7 +136,7 @@ Please adjust **_ONLY_** the following properties to fit your specific project:
 
 ##### HTML structure:
 ```html
-<div class="Unsupported">
+<div class="Unsupported NonFunctionals">
   <img class="Unsupported-Icon" />
   <h1 class="Unsupported-Title" />
   <div class="Unsupported-UnsupportedIcons">
@@ -179,14 +161,10 @@ Please adjust **_ONLY_** the following properties to fit your specific project:
 | icon               | string   | no       |
 | title              | string   | yes      |
 | description        | string   | yes      |
-| fontColor          | string   | no       |
-| backgroundColor    | string   | no       |
-| backgroundImage    | string   | no       |
-| zIndex             | number   | no       |
 
 ##### HTML structure:
 ```html
-<div class="WebGLNotEnabled">
+<div class="WebGLNotEnabled NonFunctionals">
   <img class="WebGLNotEnabled-Icon" />
   <h1 class="WebGLNotEnabled-Title" />
   <p class="WebGLNotEnabled-Description" />
@@ -205,14 +183,10 @@ Please adjust **_ONLY_** the following properties to fit your specific project:
 | icon               | string   | no       |
 | title              | string   | yes      |
 | description        | string   | yes      |
-| fontColor          | string   | no       |
-| backgroundColor    | string   | no       |
-| backgroundImage    | string   | no       |
-| zIndex             | number   | no       |
 
 ##### HTML structure:
 ```html
-<div class="WindowTooSmall">
+<div class="WindowTooSmall NonFunctionals">
   <img class="WindowTooSmall-Icon" />
   <h1 class="WindowTooSmall-Title" />
   <p class="WindowTooSmall-Description" />

@@ -16,18 +16,11 @@ class RotateDevice extends React.PureComponent {
     tabletOrientation: PropTypes.oneOfType([PropTypes.string, PropTypes.element]).isRequired,
     tabletIcon: PropTypes.string,
     tabletTitle: PropTypes.oneOfType([PropTypes.string, PropTypes.element]).isRequired,
-    fontColor: PropTypes.string,
-    backgroundColor: PropTypes.string,
-    backgroundImage: PropTypes.string,
-    zIndex: PropTypes.number,
   };
 
   static defaultProps = {
     mobileOrientation: 'portrait',
     tabletOrientation: 'landscape',
-    backgroundColor: '#FFF',
-    fontColor: '#000',
-    zIndex: 10000,
   }
 
   constructor(props) {
@@ -76,18 +69,12 @@ class RotateDevice extends React.PureComponent {
   }, 500);
 
   render() {
-    const { fontColor, backgroundColor, backgroundImage, zIndex } = this.props;
     const { active, title, icon, orientation } = this.state;
 
     return (
       <Section
-        className="RotateDevice"
+        className="RotateDevice NonFunctionals"
         active={active}
-        orientation={orientation}
-        backgroundColor={backgroundColor}
-        backgroundImage={backgroundImage}
-        fontColor={fontColor}
-        zIndex={zIndex}
       >
         <Wrapper>
           {icon &&

@@ -1,45 +1,31 @@
 import styled from 'styled-components';
 
-import BaseWrapper from '../../styles/Wrapper';
+import {
+  Section as BaseSection,
+  Icon as BaseIcon,
+  Wrapper as BaseWrapper,
+} from './../../styles';
 
-const Section = styled.div`
-
-  display: ${({ active }) => active ? 'block' : 'none'};
-
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-
-  background-color: ${({ backgroundColor }) => backgroundColor};
-  background-image: ${({ backgroundImage }) => backgroundImage && `url(${backgroundImage})`};
-  background-size: cover;
-
-  color: ${({ fontColor }) => fontColor};
-
-  z-index: ${({ zIndex }) => zIndex};
+export const Section = styled(BaseSection)`
 
 `;
 
-const Wrapper = BaseWrapper.extend`
+export const Wrapper = styled(BaseWrapper)`
 
   text-align: center;
   width: 75%;
 
 `;
 
-const Icon = styled.img`
+export const Icon = styled(BaseIcon)`
 
-  display: inline-block;
   vertical-align: middle;
 
   margin: ${({ orientation }) => orientation === 'landscape' ? '0 30px 0 0' : '0 0 30px 0'};
 
 `;
 
-const Title = styled.h1`
+export const Title = styled.h1`
 
   display: ${({ orientation }) => orientation === 'landscape' ? 'inline-block' : 'block'};
   vertical-align: middle;
@@ -55,5 +41,3 @@ const Title = styled.h1`
   margin: 0 auto;
 
 `;
-
-export { Section, Wrapper, Icon, Title };
