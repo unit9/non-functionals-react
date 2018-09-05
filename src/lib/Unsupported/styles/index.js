@@ -4,9 +4,10 @@ import {
   Section as BaseSection,
   Icon as BaseIcon,
   Cta as BaseCta,
-} from './../../styles/shared';
+  Wrapper as BaseWrapper
+} from './../../styles';
 
-const Section = styled(BaseSection)`
+export const Section = styled(BaseSection)`
 
   padding: 0 20px;
   box-sizing: border-box;
@@ -20,7 +21,7 @@ const Section = styled(BaseSection)`
 
 `;
 
-const Icon = styled(BaseIcon)`
+export const Icon = styled(BaseIcon)`
 
   width: ${({ type }) => type === 'mobile' ? '65px' : 'auto'};
 
@@ -31,7 +32,7 @@ const Icon = styled(BaseIcon)`
 
 `;
 
-const Title = styled.p`
+export const Title = styled.p`
 
   margin: 0 0 30px 0;
 
@@ -41,7 +42,7 @@ const Title = styled.p`
 
 `;
 
-const UnsupportedIcons = styled.div`
+export const UnsupportedIcons = styled.div`
 
   margin-bottom: 30px;
 
@@ -76,7 +77,7 @@ const UnsupportedIcons = styled.div`
 
 `;
 
-const Description = styled.p`
+export const Description = styled.p`
 
   margin: 0 auto 30px auto;
   max-width: 600px;
@@ -87,7 +88,7 @@ const Description = styled.p`
 
 `;
 
-const Cta = styled(BaseCta)`
+export const Cta = styled(BaseCta)`
 
   @media (max-height: 500px) {
     padding: 10px 30px;
@@ -95,4 +96,6 @@ const Cta = styled(BaseCta)`
 
 `;
 
-export { Section, Icon, Title, Description, Cta, UnsupportedIcons };
+export const Wrapper = styled(BaseWrapper)`
+
+`;

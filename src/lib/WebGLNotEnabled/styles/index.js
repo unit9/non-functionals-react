@@ -5,26 +5,29 @@ import {
   Icon as BaseIcon,
   Title as BaseTitle,
   Description as BaseDescription,
-} from './../../styles/shared';
+  Wrapper as BaseWrapper,
+} from './../../styles';
 
-const Section = styled(BaseSection)`
+export const Section = styled(BaseSection)`
 
   text-align: center;
 
 `;
 
-const Icon = styled(BaseIcon)`
+export const Icon = styled(BaseIcon)`
 
 `;
 
-const Title = styled(BaseTitle)`
+export const Title = styled(BaseTitle)`
 
 `;
 
-const Description = styled(BaseDescription)`
+export const Description = styled(BaseDescription)`
 
   max-width: 600px;
 
 `;
 
-export { Section, Icon, Title, Description };
+export const Wrapper = styled(BaseWrapper)`
+
+`;

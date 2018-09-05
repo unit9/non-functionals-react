@@ -3,8 +3,7 @@ import PropTypes from 'prop-types';
 import isWebglEnabled from 'detector-webgl';
 import isHtml from "is-html";
 
-import Wrapper from '../styles/Wrapper';
-import { Section, Icon, Title, Description } from './styles';
+import { Section, Icon, Title, Description, Wrapper } from './styles';
 
 class WebGLNotEnabled extends React.Component {
   static propTypes = {

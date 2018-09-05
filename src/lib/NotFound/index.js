@@ -2,8 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import isHtml from "is-html";
 
-import Wrapper from '../styles/Wrapper';
-import { Section, Icon, Title, Subtitle, Description, Cta } from './styles';
+import { Section, Icon, Title, Subtitle, Description, Cta, Wrapper } from './styles';
 
 class NotFound extends React.Component {
   static propTypes = {

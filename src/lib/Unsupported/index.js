@@ -4,14 +4,14 @@ import isHtml from "is-html";
 
 import BrowserDetection from "./BrowserDetection";
 
-import Wrapper from "../styles/Wrapper";
 import {
   Section,
   Icon,
   Title,
   Description,
   UnsupportedIcons,
-  Cta
+  Cta,
+  Wrapper
 } from "./styles";
 
 class Unsupported extends React.Component {

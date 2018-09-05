@@ -5,22 +5,23 @@ import {
   Icon as BaseIcon,
   Description as BaseDescription,
   Cta as BaseCta,
-} from './../../styles/shared';
+  Wrapper as BaseWrapper,
+} from './../../styles';
 
-const Section = styled(BaseSection)`
+export const Section = styled(BaseSection)`
 
   padding: 0 20px;
   box-sizing: border-box;
   text-align: center;
-  display: inherit;
+  display: flex;
 
 `;
 
-const Icon = styled(BaseIcon)`
+export const Icon = styled(BaseIcon)`
 
 `;
 
-const Title = styled.h1`
+export const Title = styled.h1`
 
   font-size: 100px;
   margin: 0 0 30px 0;
@@ -31,7 +32,7 @@ const Title = styled.h1`
 
 `;
 
-const Subtitle = styled.h2`
+export const Subtitle = styled.h2`
 
   font-size: 32px;
   margin: 0 auto 10px auto;
@@ -43,7 +44,7 @@ const Subtitle = styled.h2`
 
 `;
 
-const Description = styled(BaseDescription)`
+export const Description = styled(BaseDescription)`
 
   margin: 0 auto 30px auto;
   max-width: 600px;
@@ -51,10 +52,12 @@ const Description = styled(BaseDescription)`
 
 `;
 
-const Cta = styled(BaseCta)`
+export const Cta = styled(BaseCta)`
 
   font-size: 22px;
 
 `;
 
-export { Section, Icon, Title, Subtitle, Description, Cta };
+export const Wrapper = styled(BaseWrapper)`
+
+`;

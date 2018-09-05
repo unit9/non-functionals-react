@@ -4,8 +4,7 @@ import UAParser from "ua-parser-js";
 import debounce from "lodash.debounce";
 import isHtml from "is-html";
 
-import Wrapper from "../styles/Wrapper";
-import { Section, Icon, Title, Description } from "./styles";
+import { Section, Icon, Title, Description, Wrapper } from "./styles";
 
 const device = new UAParser().getResult().device.type;
 

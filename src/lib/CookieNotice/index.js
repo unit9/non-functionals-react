@@ -2,7 +2,6 @@ import React from "react";
 import PropTypes from "prop-types";
 import isHtml from "is-html";
 
-import Wrapper from "../styles/Wrapper";
 import { Section, Text, Close } from "./styles";
 
 class CookieNotice extends React.Component {

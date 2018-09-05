@@ -56,3 +56,9 @@ export const Cta = styled.button`
   cursor: pointer;
 
 `;
+
+export const Wrapper = styled.div`
+
+  width: calc(100% - 40px);
+
+`;

@@ -1,23 +1,23 @@
 import styled from 'styled-components';
 
-import BaseWrapper from './../../styles/Wrapper';
 import {
   Section as BaseSection,
   Icon as BaseIcon,
-} from './../../styles/shared';
+  Wrapper as BaseWrapper,
+} from './../../styles';
 
-const Section = styled(BaseSection)`
+export const Section = styled(BaseSection)`
 
 `;
 
-const Wrapper = styled(BaseWrapper)`
+export const Wrapper = styled(BaseWrapper)`
 
   text-align: center;
   width: 75%;
 
 `;
 
-const Icon = styled(BaseIcon)`
+export const Icon = styled(BaseIcon)`
 
   vertical-align: middle;
 
@@ -25,7 +25,7 @@ const Icon = styled(BaseIcon)`
 
 `;
 
-const Title = styled.h1`
+export const Title = styled.h1`
 
   display: ${({ orientation }) => orientation === 'landscape' ? 'inline-block' : 'block'};
   vertical-align: middle;
@@ -41,5 +41,3 @@ const Title = styled.h1`
   margin: 0 auto;
 
 `;
-
-export { Section, Wrapper, Icon, Title };
