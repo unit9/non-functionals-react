@@ -8,37 +8,25 @@ class CookieNotice extends React.Component {
   static propTypes = {
     text: PropTypes.oneOfType([PropTypes.string, PropTypes.element])
       .isRequired,
-    fontColor: PropTypes.string,
-    backgroundColor: PropTypes.string,
-    zIndex: PropTypes.number,
     onCloseClick: PropTypes.func.isRequired,
     active: PropTypes.bool,
   };
 
   static defaultProps = {
-    fontColor: "#000",
-    backgroundColor: "#FFF",
-    zIndex: 10000,
     active: true,
   };
 
   render() {
     const {
       text,
-      fontColor,
-      backgroundColor,
-      zIndex,
       onCloseClick,
       active,
     } = this.props;
 
     return (
       <Section
-        className="CookieNotice"
+        className="CookieNotice NonFunctionals"
         active={active}
-        backgroundColor={backgroundColor}
-        fontColor={fontColor}
-        zIndex={zIndex}
       >
         {isHtml(text) ? (
           <Text
@@ -50,7 +38,7 @@ class CookieNotice extends React.Component {
             {text}
           </Text>
         )}
-        <Close fontColor={fontColor} onClick={() => onCloseClick()} />
+        <Close onClick={() => onCloseClick()} />
       </Section>
     );
   }

@@ -23,7 +23,7 @@ import firefoxIcon from './images/unsupported/firefox.png';
 import ieIcon from './images/unsupported/ie.png';
 import safariIcon from './images/unsupported/safari.png';
 import warningIcon from './images/unsupported/warning.png';
-import { CookieNotice } from '../lib/CookieNotice';
+import { CookieNotice } from './../lib/CookieNotice';
 
 injectGlobal`
 
@@ -47,6 +47,12 @@ injectGlobal`
 
   button, div, a, span {
     -webkit-tap-highlight-color: transparent;
+  }
+
+  .NonFunctionals:not(.CookieNotice):not(.BuildVersion) {
+    color: #FFF;
+    background: url(${rotateBg}) no-repeat #000;
+    background-size: cover;
   }
 
 `;
@@ -94,12 +100,6 @@ const App = () => (
       subtitle="Sorry, something has gone wrong."
       description="We can't find what you're looking for."
       cta="Back to Home"
-      ctaBackgroundColor="#000"
-      ctaFontColor="#FFF"
-      fontColor="#FFF"
-      backgroundImage={rotateBg}
-      backgroundColor="#000"
-      zIndex={10000}
       onContinue={() => console.log('continue')}
     />
     <WindowTooSmall
@@ -108,10 +108,6 @@ const App = () => (
       icon={windowTooSmallIcon}
       title="Window Too Small"
       description="Please increase the size of your <br /> screen to view this website."
-      fontColor="#FFF"
-      backgroundImage={rotateBg}
-      backgroundColor="#000"
-      zIndex={10000}
     />
     <RotateDevice
       mobileOrientation="portrait"
@@ -120,19 +116,11 @@ const App = () => (
       tabletOrientation="landscape"
       tabletIcon={rotateTablet}
       tabletTitle="Please rotate your device horizontally."
-      fontColor="#FFF"
-      backgroundImage={rotateBg}
-      backgroundColor="#000"
-      zIndex={10000}
     />
     <WebGLNotEnabled
       icon={warningIcon}
       title="Sorry!"
       description="We cannot detect WebGL in your browser. <br /> Please enable WebGL or switch to a desktop browser or device that supports WebGL to continue."
-      fontColor="#FFF"
-      backgroundImage={rotateBg}
-      backgroundColor="#000"
-      zIndex={10000}
     />
     <Unsupported
       supported={supported}
@@ -148,18 +136,9 @@ const App = () => (
       tabletDescription="[TABLET] We recommend that you use one of these browsers."
       socialInstructions="You can open this site directly in your browser by clicking the menu button in either the top-right or bottom-right of the screen."
       cta="Continue Anyway"
-      ctaBackgroundColor="#000"
-      ctaFontColor="#FFF"
-      fontColor="#FFF"
-      backgroundImage={rotateBg}
-      backgroundColor="#000"
-      zIndex={10000}
     />
     <CookieNotice
       text="We use cookies to provide you with a better onsite experience. By continuing to browse the site you are agreeing to our use of cookies in accordance with our <a href='https://www.unit9.com/' target=_blank>Cookie Policy</a>"
-      fontColor="#FFF"
-      backgroundColor="#000"
-      zIndex={10000}
       onCloseClick={() => console.log('close clicked')}
     />
   </div>

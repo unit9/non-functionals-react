@@ -11,21 +11,7 @@ class NotFound extends React.Component {
     subtitle: PropTypes.oneOfType([PropTypes.string, PropTypes.element]).isRequired,
     description: PropTypes.oneOfType([PropTypes.string, PropTypes.element]).isRequired,
     cta: PropTypes.oneOfType([PropTypes.string, PropTypes.element]).isRequired,
-    ctaBackgroundColor: PropTypes.string,
-    ctaFontColor: PropTypes.string,
-    fontColor: PropTypes.string,
-    backgroundColor: PropTypes.string,
-    backgroundImage: PropTypes.string,
-    zIndex: PropTypes.number,
     onContinue: PropTypes.func.isRequired,
-  };
-
-  static defaultProps = {
-    fontColor: '#000',
-    ctaBackgroundColor: '#000',
-    ctaFontColor: '#FFF',
-    backgroundColor: '#FFF',
-    zIndex: 10000,
   };
 
   render() {
@@ -35,22 +21,12 @@ class NotFound extends React.Component {
       subtitle,
       description,
       cta,
-      fontColor,
-      ctaBackgroundColor,
-      ctaFontColor,
-      backgroundColor,
-      backgroundImage,
-      zIndex,
       onContinue,
     } = this.props;
 
     return (
       <Section
-        className="NotFound"
-        backgroundColor={backgroundColor}
-        backgroundImage={backgroundImage}
-        fontColor={fontColor}
-        zIndex={zIndex}
+        className="NotFound NonFunctionals"
       >
         <Wrapper>
           {icon && <Icon src={icon} className="NotFound-Icon" />}
@@ -86,8 +62,6 @@ class NotFound extends React.Component {
           )}
           <Cta
             className="NotFound-Cta"
-            backgroundColor={ctaBackgroundColor}
-            fontColor={ctaFontColor}
             onClick={() => onContinue()}
           >
             {cta}

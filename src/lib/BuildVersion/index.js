@@ -21,7 +21,7 @@ class BuildVersion extends React.PureComponent {
     if (live) return null;
 
     return (
-      <Host className="BuildVersion">
+      <Host className="BuildVersion NonFunctionals">
         {this.state.open && (
           <Info>{version}</Info>
         )}

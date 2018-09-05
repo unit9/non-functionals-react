@@ -13,13 +13,10 @@ export const Section = styled.div`
   height: 100%;
   overflow: hidden;
 
-  background-color: ${({ backgroundColor }) => backgroundColor};
-  background-image: ${({ backgroundImage }) => backgroundImage && `url(${backgroundImage})`};
-  background-size: cover;
+  background-color: #FFF;
+  color: #000;
 
-  color: ${({ fontColor }) => fontColor};
-
-  z-index: ${({ zIndex }) => zIndex};
+  z-index: 10000;
 
 `;
 
@@ -48,8 +45,8 @@ export const Cta = styled.button`
 
   margin: 0;
   max-width: 600px;
-  background-color: ${({ backgroundColor }) => backgroundColor};
-  color: ${({ fontColor }) => fontColor};
+  background-color: #000;
+  color: #FFF;
   border-radius: 5px;
   border: none;
   padding: 15px 40px;
