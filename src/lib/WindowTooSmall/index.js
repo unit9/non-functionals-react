@@ -29,6 +29,7 @@ class WindowTooSmall extends React.Component {
   }
 
   componentWillUnmount() {
+    this.onResize.cancel();
     window.removeEventListener("resize", this.onResize);
   }
 
