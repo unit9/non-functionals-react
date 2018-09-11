@@ -58,6 +58,11 @@ class RotateDevice extends React.PureComponent {
     const orientation =
       window.innerWidth > window.innerHeight ? 'landscape' : 'portrait';
 
+    if (device === 'mobile' || device === 'tablet') {
+      const el = document.querySelector(':focus');
+      if(el) el.blur();
+    }
+
     if (
       (device === 'mobile' && orientation !== mobileOrientation) ||
       (device === 'tablet' && orientation !== tabletOrientation)
