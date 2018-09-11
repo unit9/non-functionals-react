@@ -50,6 +50,7 @@ class RotateDevice extends React.PureComponent {
   }
 
   componentWillUnmount() {
+    this.onResize.cancel();
     window.removeEventListener('resize', this.onResize);
   }
 
