@@ -60,6 +60,11 @@ class Unsupported extends React.Component {
       PropTypes.element
     ]).isRequired,
     cta: PropTypes.oneOfType([PropTypes.string, PropTypes.element]).isRequired,
+    forceActive: PropTypes.bool
+  };
+
+  static defaultProps = {
+    forceActive: false,
   };
 
   constructor(props) {
@@ -75,13 +80,14 @@ class Unsupported extends React.Component {
       unsupportedIconsTablet,
       description,
       mobileDescription,
-      tabletDescription
-    } = this.props;
+      tabletDescription,
+      forceActive
+    } = props;
 
     this.browserDetection = new BrowserDetection(supported);
 
     let initialState = {
-      active: false,
+      active: forceActive,
       title: null,
       icons: null,
       description: null
