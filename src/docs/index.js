@@ -108,6 +108,7 @@ const App = () => (
       icon={windowTooSmallIcon}
       title="Window Too Small"
       description="Please increase the size of your <br /> screen to view this website."
+      onStateChange={(newState) => console.log('WindowTooSmall active state change:', newState)}
     />
     <RotateDevice
       mobileOrientation="portrait"
@@ -116,6 +117,7 @@ const App = () => (
       tabletOrientation="landscape"
       tabletIcon={rotateTablet}
       tabletTitle="Please rotate your device horizontally."
+      onStateChange={(newState) => console.log('RotateDevice active state change:', newState)}
     />
     <WebGLNotEnabled
       icon={warningIcon}

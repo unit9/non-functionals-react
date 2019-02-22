@@ -16,12 +16,14 @@ class RotateDevice extends React.PureComponent {
     tabletOrientation: PropTypes.oneOfType([PropTypes.string, PropTypes.element]).isRequired,
     tabletIcon: PropTypes.string,
     tabletTitle: PropTypes.oneOfType([PropTypes.string, PropTypes.element]).isRequired,
+    onStateChange: PropTypes.func,
   };
 
   static defaultProps = {
     mobileOrientation: 'portrait',
     tabletOrientation: 'landscape',
-  }
+    onStateChange: () => {},
+  };
 
   constructor(props) {
     super(props);
@@ -52,6 +54,12 @@ class RotateDevice extends React.PureComponent {
   componentWillUnmount() {
     this.onResize.cancel();
     window.removeEventListener('resize', this.onResize);
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    if (this.state.active !== prevState.active) {
+      this.props.onStateChange(this.state.active);
+    }
   }
 
   onResize = debounce(() => {
