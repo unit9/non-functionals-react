@@ -17,6 +17,11 @@ class WindowTooSmall extends React.Component {
       .isRequired,
     description: PropTypes.oneOfType([PropTypes.string, PropTypes.element])
       .isRequired,
+    onStateChange: PropTypes.func,
+  };
+
+  static defaultProps = {
+    onStateChange: () => {},
   };
 
   state = {
@@ -31,6 +36,12 @@ class WindowTooSmall extends React.Component {
   componentWillUnmount() {
     this.onResize.cancel();
     window.removeEventListener("resize", this.onResize);
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    if (this.state.active !== prevState.active) {
+      this.props.onStateChange(this.state.active);
+    }
   }
 
   onResize = debounce(() => {
